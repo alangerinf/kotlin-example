@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChatOwlCardViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_24dp"
+    android:layout_marginVertical="@dimen/margin_8dp"
+    app:cardElevation="@dimen/elevation_large">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_16dp">
+
+        <TextView
+            android:id="@+id/row_crisis_support_text_view_name"
+            style="@style/ChatOwlTextViewStyle.Smallish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="National Suicide Prevention Lifeline" />
+
+        <TextView
+            android:id="@+id/row_crisis_support_text_view_phone_number"
+            style="@style/ChatOwlTextViewStyle.Smallish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:textStyle="bold"
+            tools:text="+1 (800) 799-7233" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

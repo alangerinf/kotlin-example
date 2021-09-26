@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_50"
+    android:paddingHorizontal="@dimen/padding_32dp">
+
+    <TextView
+        android:id="@+id/layout_notification_preferences_item_text_view_name"
+        style="@style/ChatOwlTextViewStyle.Smallish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_24dp"
+        android:textColor="@color/white_80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layout_notification_preferences_item_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Notification" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/layout_notification_preferences_item_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:thumbTint="@color/selector_switch_thumb"
+        app:trackTint="@color/selector_switch_track" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

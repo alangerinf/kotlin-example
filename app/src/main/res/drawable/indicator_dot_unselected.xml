@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid
+        android:color="@color/white" />
+    <size
+        android:width="@dimen/fullscreen_image_choice_indicator_size"
+        android:height="@dimen/fullscreen_image_choice_indicator_size" />
+</shape>

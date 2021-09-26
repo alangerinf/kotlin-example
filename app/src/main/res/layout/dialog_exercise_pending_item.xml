@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_message_layout_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/dialog_message_image_view_icon"
+            android:layout_width="@dimen/size_42dp"
+            android:layout_height="@dimen/size_42dp"
+            android:layout_marginTop="@dimen/margin_80dp"
+            android:src="@drawable/ic_check_activity_completed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog_message_text_view"
+            style="@style/ChatOwlBottomSheetTitleTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_marginBottom="@dimen/margin_60dp"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_message_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_message_image_view_icon"
+            tools:text="This session is locked until you complete the previous sessions" />
+
+        <Button
+            android:id="@+id/dialog_message_button"
+            style="@style/ChatOwlButtonStyle"
+            android:layout_marginVertical="@dimen/margin_32dp"
+            android:text="@string/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

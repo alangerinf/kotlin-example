@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_settings_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_settings_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:isBackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:light="true"
+        app:showDivider="false"
+        app:toolbarTitle="@string/settings" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_settings_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_my_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_avatar"
+                app:itemName="@string/my_account" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_app_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_settings"
+                app:itemName="@string/app_preferences" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_notification_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_notifications"
+                app:itemName="@string/notification_preferences" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_email_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_notifications"
+                app:itemName="@string/email_preferences" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_40dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/information" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_about_chatowl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:src="@drawable/ic_books"
+                app:itemName="@string/about_chat_owl"
+                app:showSettingsDisclosure="false" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_app_tour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_books"
+                app:itemName="@string/app_tour"
+                app:showSettingsDisclosure="false" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_contact_us"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_contact_us"
+                app:itemName="@string/contact_us"
+                app:showSettingsDisclosure="false" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_give_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_feedback"
+                app:itemName="@string/give_feedback"
+                app:showSettingsDisclosure="false" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_crisis_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:src="@drawable/ic_phone"
+                app:itemName="@string/crisis_support" />
+
+            <com.chatowl.presentation.common.widgets.SettingsItem
+                android:id="@+id/fragment_settings_item_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_80dp"
+                android:layout_marginBottom="@dimen/margin_40dp"
+                android:src="@drawable/ic_logout"
+                app:itemName="@string/logout"
+                app:showSettingsDisclosure="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

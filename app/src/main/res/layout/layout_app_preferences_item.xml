@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_50"
+    android:paddingHorizontal="@dimen/padding_32dp">
+
+    <TextView
+        android:id="@+id/layout_app_preferences_item_text_view_name"
+        style="@style/ChatOwlTextViewStyle.Smallish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_app_preferences_item_text_view_description"
+        app:layout_constraintEnd_toStartOf="@+id/layout_app_preferences_item_image_view_icon_end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="App Preference Title" />
+
+    <TextView
+        android:id="@+id/layout_app_preferences_item_text_view_description"
+        style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/layout_app_preferences_item_text_view_name"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Description" />
+
+    <ImageView
+        android:id="@+id/layout_app_preferences_item_image_view_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:src="@drawable/ic_arrow_right_light"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layout_app_preferences_item_switch"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/layout_app_preferences_item_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:thumbTint="@color/selector_switch_thumb"
+        app:trackTint="@color/selector_switch_track"
+        tools:checked="true"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

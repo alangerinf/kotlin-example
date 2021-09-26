@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.chatowl.presentation.common.widgets.MyToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:toolbarTitle="" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_edit_text_default_light"
+            android:padding="@dimen/margin_2dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+            <include layout="@layout/tab_journey_time_mode"
+                android:id="@+id/tabDays"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include layout="@layout/tab_journey_time_mode"
+                android:id="@+id/tabWeeks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/divider2"
+                app:layout_constraintStart_toEndOf="@+id/divider1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include layout="@layout/tab_journey_time_mode"
+                android:id="@+id/tabMonths"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/divider2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:alpha="0.3"
+                android:background="#8E8E93"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:alpha="0.5"
+                android:background="#8E8E93"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.66"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tView_noChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_50dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/journey_no_items_description"
+            android:textColor="@color/lightViolet"
+            android:fontFamily="@font/averta_regular"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/scrollView_moodOptions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_checkYourMood" />
+
+
+
+        <ImageView
+            android:id="@+id/iView_emptyStatus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_graph"
+            android:scaleType="fitXY"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/scrollView_moodOptions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layout_checkYourMood" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_checkYourMood"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:background="@drawable/background_edit_text_default_light"
+            app:layout_constraintTop_toBottomOf="@+id/tView_noChart">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_corner_clock" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/averta_semibold"
+                android:text="@string/check_your_mood"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/chart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chart" />
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView_moodOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:orientation="horizontal"
+                android:paddingVertical="14dp">
+
+                <include layout="@layout/tab_journey_mood_mode"
+                    android:id="@+id/card_hope"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp">
+
+                </include>
+
+                <include layout="@layout/tab_journey_mood_mode"
+                    android:id="@+id/card_anger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp">
+
+                </include>
+                <include layout="@layout/tab_journey_mood_mode"
+                    android:id="@+id/card_loneliness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp">
+
+                </include>
+                <include layout="@layout/tab_journey_mood_mode"
+                    android:id="@+id/card_nervousness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp">
+
+                </include>
+                <include layout="@layout/tab_journey_mood_mode"
+                    android:id="@+id/card_anxiety"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp">
+
+                </include>
+
+                <View
+                    android:layout_width="@dimen/margin_32dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

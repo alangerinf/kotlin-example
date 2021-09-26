@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <ImageView
+        android:id="@+id/fragment_media_exercise_image_view_background"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/exercise_background_image_size"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_exercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/fragment_media_exercise_image_view_preview_icon"
+        android:layout_width="@dimen/size_58dp"
+        android:layout_height="@dimen/size_58dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_media_exercise_image_view_background"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_media_exercise_image_view_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_play_circle" />
+
+    <ProgressBar
+        android:id="@+id/fragment_media_exercise_progressbar"
+        android:layout_width="@dimen/size_58dp"
+        android:layout_height="@dimen/size_58dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_media_exercise_image_view_background"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_media_exercise_image_view_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/fragment_media_exercise_tool_bar_warning"
+        style="@style/ChatOwlTextViewStyle.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:alpha="0.75"
+        android:background="@drawable/background_red_rounded_small"
+        android:drawablePadding="@dimen/padding_4dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="@dimen/padding_8dp"
+        android:paddingVertical="@dimen/padding_4dp"
+        android:visibility="gone"
+        android:text="@string/toolbox_item_download_not_enough_space"
+        app:drawableStartCompat="@drawable/ic_warning_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_media_exercise_image_view_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_media_exercise_toolbar"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:isBackEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:light="true"
+        app:showDivider="false"
+        android:elevation="5dp"
+        app:toolbarTitle="" />
+
+    <com.chatowl.presentation.common.widgets.TopFadeEdgeNestedScrollView
+        android:id="@+id/fragment_media_exercise_category_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadeScrollbars="true"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/fade_edge_length_large"
+        android:requiresFadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/fragment_media_exercise_view_background_click_handler"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="?android:attr/selectableItemBackground"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/windowBackground"
+                android:paddingBottom="@dimen/padding_16dp">
+
+                <ToggleButton
+                    android:id="@+id/fragment_media_exercise_toggle_favorite"
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    android:layout_margin="@dimen/margin_32dp"
+                    android:background="@drawable/ic_favorite_selector"
+                    android:checked="false"
+                    android:text=""
+                    android:textOff=""
+                    android:textOn=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/fragment_media_exercise_image_view_download"
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    android:layout_marginTop="@dimen/margin_32dp"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:contentDescription="@string/download"
+                    android:src="@drawable/ic_download_outline_gray"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_media_exercise_toggle_favorite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fragment_media_exercise_lottie_view_cv_download"
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    app:contentPadding="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false"
+                    android:clickable="false"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:layout_marginTop="@dimen/margin_32dp"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_media_exercise_toggle_favorite"
+                    app:cardCornerRadius="@dimen/corner_radius_small"
+
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/fragment_media_exercise_lottie_view_download"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:lottie_loop="true"
+                        app:lottie_fileName="lottie_downloading.json" />
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/fragment_media_exercise_text_view_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                    android:layout_marginTop="@dimen/margin_32dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="start"
+                    android:textSize="@dimen/text_size_18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_media_exercise_image_view_download"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Mood Elevation" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_media_exercise_text_view_title"
+                    app:layout_constraintVertical_bias="0">
+
+                    <LinearLayout
+                        android:id="@+id/fragment_media_exercise_layout_exercise_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_32dp"
+                            android:layout_marginTop="@dimen/margin_40dp"
+                            android:background="@drawable/background_dark_rounded_medium"
+                            android:drawablePadding="@dimen/padding_12dp"
+                            android:gravity="center"
+                            android:lineSpacingExtra="3sp"
+                            android:paddingHorizontal="@dimen/padding_32dp"
+                            android:paddingVertical="@dimen/padding_24dp"
+                            android:text="@string/exercise_completed_message"
+                            android:textColor="@color/colorAccent"
+                            app:drawableTopCompat="@drawable/ic_check_activity_completed" />
+
+                        <Button
+                            android:id="@+id/fragment_media_exercise_button_back"
+                            style="@style/ChatOwlButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_16dp"
+                            android:text="@string/back" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fragment_media_exercise_layout_exercise_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        tools:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/fragment_media_exercise_text_view_body"
+                            style="@style/ChatOwlTextViewStyle.Smallish"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_32dp"
+                            android:layout_marginTop="@dimen/margin_24dp"
+                            android:letterSpacing="0.03"
+                            android:lineSpacingExtra="3sp"
+                            android:textColor="@color/white_80"
+                            app:layout_constraintTop_toBottomOf="@+id/fragment_media_exercise_text_view_title"
+                            tools:text="Quisque a fermentum vitae pellentesque ullamcorper. Malesuada auctor praesent vitae mauris at egestas consectetur enim. Risus, est lacus tristique eget." />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/fragment_media_exercise_layout_exercise_information_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp">
+
+                                    <TextView
+                                        android:id="@+id/fragment_media_exercise_text_view_type"
+                                        style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_16dp"
+                                        android:drawablePadding="@dimen/padding_4dp"
+                                        android:paddingHorizontal="@dimen/padding_4dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:drawableTint="@color/lightViolet"
+                                        tools:drawableStartCompat="@drawable/ic_video_type"
+                                        tools:text="Video" />
+
+                                    <TextView
+                                        android:id="@+id/fragment_media_exercise_text_view_time"
+                                        style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_16dp"
+                                        android:drawablePadding="@dimen/padding_4dp"
+                                        android:paddingHorizontal="@dimen/padding_4dp"
+                                        app:drawableStartCompat="@drawable/ic_time_needed"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:text="15 mins" />
+
+                                    <TextView
+                                        android:id="@+id/fragment_media_exercise_text_view_played"
+                                        style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/margin_16dp"
+                                        android:drawablePadding="@dimen/padding_4dp"
+                                        android:gravity="end"
+                                        android:paddingHorizontal="@dimen/padding_4dp"
+                                        app:drawableStartCompat="@drawable/ic_played_count"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:text="Played: 4" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/fragment_media_exercise_layout_resume"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:layout_marginTop="@dimen/margin_40dp"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/fragment_media_exercise_text_view_type"
+                                    tools:visibility="visible">
+
+                                    <ProgressBar
+                                        android:id="@+id/fragment_media_exercise_progressbar_watch_position"
+                                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="4dp"
+                                        android:progressDrawable="@drawable/progress_bar_exercise"
+                                        tools:max="1000"
+                                        tools:progress="500" />
+
+                                    <TextView
+                                        style="@style/ChatOwlTextViewStyle.Smallish.Secondary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/margin_16dp"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="@string/resume_where_you_left_off" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/fragment_media_exercise_text_view_preparation"
+                                    style="@style/ChatOwlTextViewStyle.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:layout_marginTop="@dimen/margin_24dp"
+                                    android:layout_marginBottom="@dimen/margin_12dp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:text="@string/preparation"
+                                    android:visibility="gone"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/fragment_media_exercise_layout_resume"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/fragment_media_exercise_text_view_make_yourself_comfortable"
+                                    style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:background="@color/dark"
+                                    android:drawablePadding="@dimen/padding_24dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingHorizontal="@dimen/padding_32dp"
+                                    android:paddingVertical="@dimen/padding_24dp"
+                                    android:text="@string/make_yourself_comfortable"
+                                    android:visibility="gone"
+                                    app:drawableStartCompat="@drawable/ic_couch"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/fragment_media_exercise_text_view_use_headphones"
+                                    style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:layout_marginTop="@dimen/margin_2dp"
+                                    android:background="@color/dark"
+                                    android:drawablePadding="@dimen/padding_24dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingHorizontal="@dimen/padding_32dp"
+                                    android:paddingVertical="@dimen/padding_24dp"
+                                    android:text="@string/use_headphones"
+                                    android:visibility="gone"
+                                    app:drawableStartCompat="@drawable/ic_headphones"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/fragment_media_exercise_text_view_dim_lights"
+                                    style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:layout_marginTop="@dimen/margin_2dp"
+                                    android:background="@color/dark"
+                                    android:drawablePadding="@dimen/padding_24dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingHorizontal="@dimen/padding_32dp"
+                                    android:paddingVertical="@dimen/padding_24dp"
+                                    android:text="@string/dim_the_lights"
+                                    android:visibility="gone"
+                                    app:drawableStartCompat="@drawable/ic_dim_lights"
+                                    tools:visibility="visible" />
+
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fragment_media_exercise_layout_mandatory_session"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/fragment_media_exercise_text_view_due_title"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/margin_32dp"
+                                    android:layout_marginTop="@dimen/margin_24dp"
+                                    android:text="@string/start_mandatory_session_colon"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/fragment_media_exercise_card_view_mandatory_exercise"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginHorizontal="@dimen/margin_24dp"
+                                    android:layout_marginTop="@dimen/margin_8dp"
+                                    app:cardCornerRadius="@dimen/corner_radius_medium"
+                                    app:cardElevation="@dimen/elevation_none"
+                                    app:layout_constraintDimensionRatio="H,7:3"
+                                    app:layout_constraintTop_toBottomOf="@+id/fragment_media_exercise_text_view_due_title">
+
+                                    <ImageView
+                                        android:id="@+id/fragment_media_exercise_image_view_due_exercise_background"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="@null"
+                                        android:scaleType="centerCrop"
+                                        tools:src="@drawable/background_exercise_due" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:id="@+id/fragment_media_exercise_text_view_due_exercise_duration"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="@dimen/margin_8dp"
+                                            android:drawablePadding="@dimen/padding_4dp"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/text_size_12sp"
+                                            android:visibility="gone"
+                                            app:drawableStartCompat="@drawable/ic_clock"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            tools:text="10 min"
+                                            tools:visibility="visible" />
+
+                                        <ImageView
+                                            android:id="@+id/fragment_media_exercise_image_view_due_exercise_type_icon"
+                                            android:layout_width="@dimen/size_42dp"
+                                            android:layout_height="@dimen/size_42dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:src="@drawable/ic_play_circle" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <Button
+                                android:id="@+id/fragment_media_exercise_button_subscribe"
+                                style="@style/ChatOwlButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin_36dp"
+                                android:text="@string/subscribe"
+                                android:visibility="gone" />
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </com.chatowl.presentation.common.widgets.TopFadeEdgeNestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

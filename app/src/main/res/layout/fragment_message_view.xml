@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_view_message_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:isBackEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:toolbarTitle="@string/message" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_view_message_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_view_message_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/row_message_preview_text_view_user_message_info"
+                style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                tools:text="Oct 12, 2020 08:45am    Me"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_view_message_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/row_entry_item_text" />
+
+            <TextView
+                android:id="@+id/fragment_view_message_text_view_reply_pending"
+                style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_28dp"
+                android:text="@string/reply_pending_message"
+                android:textColor="@color/lightViolet_50"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/fragment_message_view_layout_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_16dp"
+                android:layout_marginVertical="@dimen/margin_24dp"
+                android:background="@drawable/background_message_response"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fragment_message_view_text_view_reply_info"
+                    style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_16dp"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:drawablePadding="@dimen/padding_8dp"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:drawableStartCompat="@drawable/ic_reply"
+                    tools:text="Oct 12, 2020 08:45am    Therapy Team"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/fragment_message_view_text_view_reply_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_16dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:layout_marginBottom="@dimen/margin_24dp"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="3sp"
+                    android:text="Molestie risus enim faucibus vel vitae ut. Enim justo rutrum tincidunt egestas at lacus. Phasellus gravida sodales nunc amet morbi id sit. Nisl pulvinar egestas sit nec enim. Tincidunt pellentesque facilisis dignissim metus, nibh tellus.
+\n\nEuismod et urna, accumsan lobortis augue integer justo in. Ultrices convallis consectetur at ut egestas aliquam.
+\n\nYour Therapy Team" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

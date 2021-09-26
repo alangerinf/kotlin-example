@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_crisis_support_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isBackEnabled="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:light="true"
+        app:toolbarTitle="@string/crisis_support" />
+
+    <TextView
+        android:id="@+id/fragment_crisis_support_text_view_message"
+        style="@style/ChatOwlTextViewStyle.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3sp"
+        android:paddingHorizontal="@dimen/margin_32dp"
+        android:paddingVertical="@dimen/padding_16dp"
+        android:text="@string/crisis_support_message"
+        android:textColor="@color/white_50"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_crisis_support_app_bar" />
+
+    <com.chatowl.presentation.common.widgets.TopFadeEdgeRecyclerView
+        android:id="@+id/fragment_crisis_support_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/fade_edge_length_large"
+        android:requiresFadingEdge="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_crisis_support_text_view_message"
+        tools:listitem="@layout/row_crisis_support" />
+
+    <ProgressBar
+        android:id="@+id/fragment_crisis_support_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_crisis_support_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_crisis_support_text_view_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

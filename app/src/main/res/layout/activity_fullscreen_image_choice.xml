@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/activity_fullscreen_image_choice_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_fullscreen_image_choice_guideline_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_fullscreen_image_choice_guideline_90"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/activity_fullscreen_image_choice_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:isBackEnabled="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showDivider="false" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_gradient_light"
+        app:layout_constraintBottom_toTopOf="@+id/activity_fullscreen_image_choice_guideline_20"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_gradient_light"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_fullscreen_image_choice_view_pager_indicator" />
+
+    <ImageView
+        android:id="@+id/activity_fullscreen_image_choice_image_view_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:contentDescription="@string/close"
+        android:src="@drawable/ic_close_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_fullscreen_image_choice_toolbar" />
+
+    <com.chatowl.presentation.common.widgets.ViewPagerIndicatorDots
+        android:id="@+id/activity_fullscreen_image_choice_view_pager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/activity_fullscreen_image_choice_page_indicator_size"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_fullscreen_image_choice_button_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activity_fullscreen_image_choice_button_select"
+        style="@style/ChatOwlButtonStyle"
+        android:text="@string/select"
+        app:layout_constraintBottom_toTopOf="@+id/activity_fullscreen_image_choice_guideline_90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

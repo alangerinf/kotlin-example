@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/fragment_messages_linear_progress_indicator"
+        style="@style/ChatOwlLinearProgressIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_messages_layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/fragment_messages_text_view_no_messages_title"
+            style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_80dp"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/fragment_messages_coming_soon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_messages_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="2"
+        tools:listitem="@layout/row_message_preview"
+        tools:visibility="gone" />
+
+    <View
+        android:id="@+id/fragment_messages_view_pulse_large"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_messages_fab_add"
+        app:layout_constraintEnd_toEndOf="@id/fragment_messages_fab_add"
+        app:layout_constraintStart_toStartOf="@id/fragment_messages_fab_add"
+        app:layout_constraintTop_toTopOf="@id/fragment_messages_fab_add"
+        tools:layout_height="100dp"
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/fragment_messages_view_pulse_small"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_messages_fab_add"
+        app:layout_constraintEnd_toEndOf="@id/fragment_messages_fab_add"
+        app:layout_constraintStart_toStartOf="@id/fragment_messages_fab_add"
+        app:layout_constraintTop_toTopOf="@id/fragment_messages_fab_add"
+        tools:layout_height="80dp"
+        tools:layout_width="80dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fragment_messages_fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:contentDescription="@string/new_entry"
+        android:src="@drawable/ic_add"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

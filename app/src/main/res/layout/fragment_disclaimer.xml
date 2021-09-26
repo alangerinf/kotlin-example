@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fragment_disclaimer_image_view_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_94dp"
+        android:tint="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_warning_triangle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/feature_onboarding_slide_page_title"
+        style="@style/ChatOwlTextViewStyle.LightPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_40dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/fragment_disclaimer_text_view_title"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_disclaimer_image_view_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fragment_disclaimer_text_view_message_part_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/disclaimer_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feature_onboarding_slide_page_title" />
+
+    <TextView
+        android:id="@+id/fragment_disclaimer_button_crisis_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_8dp"
+        android:text="@string/link_crisis_page"
+        android:textColor="@color/selector_color_primary"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_disclaimer_button_i_understand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_disclaimer_text_view_message_part_1"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/fragment_disclaimer_button_i_understand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:text="@string/i_understand_and_accept"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_disclaimer_text_view_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_disclaimer_text_view_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_36dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/padding_4dp"
+        android:text="@string/back"
+        android:textColor="@color/selector_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

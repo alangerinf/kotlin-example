@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="navigation_transition_duration">350</integer>
+    <item name="navigation_transition_alpha" format="float" type="fraction">0.5</item>
+    <item name="navigation_transition_x_delta" type="fraction">-20%p</item>
+
+    <integer name="chat_response_max_length">500</integer>
+    <integer name="chat_response_max_lines">500</integer>
+
+    <integer name="max_length_email">127</integer>
+
+</resources>

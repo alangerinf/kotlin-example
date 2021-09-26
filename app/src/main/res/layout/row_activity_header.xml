@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_24dp"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/elevation_large">
+
+    <TextView
+        android:id="@+id/row_activity_header_text_view_time_of_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingVertical="@dimen/margin_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/row_activity_header_text_view_almost_over"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Morning" />
+
+    <TextView
+        android:id="@+id/row_activity_header_text_view_almost_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_primary_rounded_small"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="@dimen/padding_8dp"
+        android:paddingVertical="@dimen/padding_4dp"
+        android:textColor="@color/transparent_white_80"
+        android:textSize="@dimen/text_size_12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Morning is almost over"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/dark"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/elevation_medium">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_16dp">
+
+            <TextView
+                android:id="@+id/layout_chat_answer_image_text_view_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/lightViolet"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_image_barrier"
+                app:layout_constraintEnd_toStartOf="@+id/layout_chat_answer_image_text_view_action"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/please_select_image" />
+
+            <TextView
+                android:id="@+id/layout_chat_answer_image_text_view_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/selector_color_primary"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/layout_chat_answer_image_text_view_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Fullscreen" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/layout_chat_answer_image_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="layout_chat_answer_image_recycler_view, layout_chat_answer_image_layout_custom_choice" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/layout_chat_answer_image_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="400dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spanCount="2"
+                tools:listitem="@layout/row_chat_image_choice" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_chat_answer_image_layout_custom_choice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/row_chat_answer_image_card_view_gallery"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/gray20_20"
+                    app:cardCornerRadius="@dimen/corner_radius_small"
+                    app:cardElevation="@dimen/elevation_none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,3:2"
+                    app:layout_constraintEnd_toEndOf="@id/row_chat_answer_image_card_view_camera"
+                    app:layout_constraintEnd_toStartOf="@+id/row_chat_answer_image_card_view_camera"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/gallery"
+                        android:src="@drawable/ic_gallery_outline"
+                        app:tint="@color/selector_color_primary" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/row_chat_answer_image_card_view_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/gray20_20"
+                    app:cardCornerRadius="@dimen/corner_radius_small"
+                    app:cardElevation="@dimen/elevation_none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,3:2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/row_chat_answer_image_card_view_gallery"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/take_picture"
+                        android:src="@drawable/ic_camera_outline"
+                        app:tint="@color/selector_color_primary" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

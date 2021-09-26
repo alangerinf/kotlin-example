@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.chatowl.presentation.tabs.TabFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_tab">
+
+        <argument
+            android:name="tab"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true"/>
+
+        <argument
+            android:name="param"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true"/>
+
+        <deepLink
+            android:id="@+id/deepLinkToTabView"
+            app:uri="com.chatowl://tabview?tab={tab}&amp;param={param}" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_fullScreen"
+            app:destination="@id/fullScreenFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.chatowl.presentation.welcome.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_welcomeFragment"
+        app:destination="@id/welcomeFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@anim/fragment_open_exit"
+        app:popEnterAnim="@anim/fragment_close_enter"
+        app:popExitAnim="@anim/fragment_close_exit" />
+
+    <fragment
+        android:id="@+id/fullScreenFragment"
+        android:name="com.chatowl.presentation.fullscreen.FullScreenFragment"
+        android:label="FullScreenFragment"
+        tools:layout="@layout/fragment_full_screen" />
+
+    <fragment
+        android:id="@+id/tourChatFragment"
+        android:name="com.chatowl.presentation.tourchat.TourChatFragment"
+        android:label="TourChatFragment"
+        tools:layout="@layout/fragment_tour_chat"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.chatowl.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+
+
+        <action
+            android:id="@+id/action_settings_to_logout"
+            app:destination="@id/logoutDialog" />
+
+        <action
+            android:id="@+id/action_settings_to_crisisSupport"
+            app:destination="@id/fullScreenCrisisSupport"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_aboutUs"
+            app:destination="@id/fullScreenAboutUs"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_appPreferences"
+            app:destination="@id/appPreferencesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_notificationPreferences"
+            app:destination="@id/notificationsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_emailPreferences"
+            app:destination="@id/emailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_myAccountFragment"
+            app:destination="@id/myAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settings_to_appTourFragment"
+            app:destination="@id/appTourFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullScreenCrisisSupport"
+        android:name="com.chatowl.presentation.settings.crisissupport.CrisisSupportFragment"
+        android:label="CrisisSupportFragment"
+        tools:layout="@layout/fragment_crisis_support" />
+
+    <fragment
+        android:id="@+id/appTourFragment"
+        android:name="com.chatowl.presentation.apptour.AppTourFragment"
+        android:label="AppTourFragment"
+        tools:layout="@layout/fragment_app_tour" >
+
+        <argument
+            android:name="appTourData"
+            app:argType="com.chatowl.data.entities.apptour.AppTourData"
+        />
+
+        <action
+            android:id="@+id/action_appTourFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fullScreenAboutUs"
+        android:name="com.chatowl.presentation.settings.aboutus.AboutUsFragment"
+        android:label="AboutUsFragment"
+        tools:layout="@layout/fragment_about_us">
+
+        <action
+            android:id="@+id/action_aboutUs_to_termsAndConditions"
+            app:destination="@id/fullScreenTermsAndConditions"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_aboutUs_to_privacyPolicy"
+            app:destination="@id/fullScreenPrivacyPolicy"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullScreenTermsAndConditions"
+        android:name="com.chatowl.presentation.settings.aboutus.termsandconditions.TermsAndConditionsFragment"
+        android:label="TermsAndConditionsFragment"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+
+    <fragment
+        android:id="@+id/fullScreenPrivacyPolicy"
+        android:name="com.chatowl.presentation.settings.aboutus.privacypolicy.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/appPreferencesFragment"
+        android:name="com.chatowl.presentation.settings.apppreferences.AppPreferencesFragment"
+        android:label="AppPreferencesFragment"
+        tools:layout="@layout/fragment_app_preferences">
+
+        <action
+            android:id="@+id/action_appPreferences_to_clearFilesDialog"
+            app:destination="@id/clearFilesDialog" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.chatowl.presentation.settings.myaccount.MyAccountFragment"
+        android:label="MyAccountFragment"
+        tools:layout="@layout/fragment_my_account">
+
+        <action
+            android:id="@+id/action_appPreferences_to_deleteAccountDialog"
+            app:destination="@id/deleteAccountDialog" />
+
+        <action
+            android:id="@+id/action_myAccount_to_editField"
+            app:destination="@+id/editFieldFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFieldFragment"
+        android:name="com.chatowl.presentation.settings.myaccount.editfield.EditFieldFragment"
+        android:label="EditFieldFragment"
+        tools:layout="@layout/fragment_edit_field">
+
+        <argument
+            android:name="attribute"
+            app:argType="string" />
+
+        <argument
+            android:name="maxSize"
+            app:argType="integer" android:defaultValue="-1"/>
+
+        <argument
+            android:name="isMultiline"
+            app:argType="boolean" android:defaultValue="true" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/deleteAccountDialog"
+        android:name="com.chatowl.presentation.settings.myaccount.DeleteAccountDialogFragment"
+        android:label="DeleteAccountDialog"
+        tools:layout="@layout/dialog_delete_account">
+
+        <action
+            android:id="@+id/action_deleteAccount_to_DeletedAccountdialog"
+            app:destination="@id/deletedAccountDialog"
+            app:popUpTo="@+id/onboardingFragment"
+            app:popUpToInclusive="true"/>
+    </dialog>
+
+    <dialog
+        android:id="@+id/deletedAccountDialog"
+        android:name="com.chatowl.presentation.settings.myaccount.DeleteAccountDeletedFragment"
+        android:label="DeletedAccountDialog"
+        tools:layout="@layout/dialog_deleted_account">
+
+        <action
+            android:id="@+id/action_deletedAccountDialog_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.chatowl.presentation.settings.notifications.NotificationsFragment"
+        android:label="AppPreferencesFragment"
+        tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+        android:id="@+id/emailsFragment"
+        android:name="com.chatowl.presentation.settings.emails.EmailsFragment"
+        android:label="EmailPreferencesFragment"
+        tools:layout="@layout/fragment_emails"/>
+
+    <fragment
+        android:id="@+id/timeSlotsFragment"
+        android:name="com.chatowl.presentation.settings.timeslot.TimeSlotsFragment"
+        android:label="TimeSlotsFragment"
+        tools:layout="@layout/fragment_time_slots" />
+
+    <dialog
+        android:id="@+id/feedbackDialog"
+        android:name="com.chatowl.presentation.settings.feedback.FeedbackDialogFragment"
+        android:label="FeedbackDialog"
+        tools:layout="@layout/dialog_feedback" >
+
+        <argument
+            android:name="messageType"
+            app:argType="com.chatowl.data.entities.settings.apppreferences.FeedbackType" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/logoutDialog"
+        android:name="com.chatowl.presentation.settings.logout.LogoutDialogFragment"
+        android:label="LogoutDialog"
+        tools:layout="@layout/dialog_logout">
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/clearFilesDialog"
+        android:name="com.chatowl.presentation.settings.apppreferences.ClearFilesDialogFragment"
+        android:label="ClearFilesDialog"
+        tools:layout="@layout/dialog_clear_files"/>
+
+    <dialog
+        android:id="@+id/messageDialog"
+        android:name="com.chatowl.presentation.message.MessageDialogFragment"
+        android:label="MessageDialogFragment"
+        tools:layout="@layout/dialog_message">
+
+        <argument
+            android:name="message"
+            app:argType="integer" />
+
+        <argument
+            android:name="showIcon"
+            android:defaultValue="true"
+            app:argType="boolean" />
+
+    </dialog>
+    <dialog
+        android:id="@+id/okDialogFragment"
+        android:name="com.chatowl.presentation.common.OkDialogFragment"
+        android:label="OkDialogFragment"
+        tools:layout="@layout/dialog_ok">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+        <argument
+            android:name="body"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/messageDialogV2"
+        android:name="com.chatowl.presentation.message.MessageDialogFragment"
+        android:label="MessageDialogFragment"
+        tools:layout="@layout/dialog_message">
+
+        <argument
+            android:name="message"
+            app:argType="integer" />
+
+        <argument
+            android:name="showIcon"
+            android:defaultValue="true"
+            app:argType="boolean" />
+
+    </dialog>
+    <dialog
+        android:id="@+id/noInternetDialogFragment"
+        android:name="com.chatowl.presentation.nointernet.NoInternetDialogFragment"
+        android:label="noInternetDialogFragment"
+        tools:layout="@layout/dialog_no_internet">
+
+
+    </dialog>
+    <action
+        android:id="@+id/action_global_feedbackDialog"
+        app:destination="@id/feedbackDialog" />
+    <action
+        android:id="@+id/action_global_messageDialog"
+        app:destination="@id/messageDialog" />
+    <action
+        android:id="@+id/action_global_okDialogFragment"
+        app:destination="@id/okDialogFragment" />
+    <action
+        android:id="@+id/action_global_noInternetDialogFragment"
+        app:destination="@id/noInternetDialogFragment" />
+    <action
+        android:id="@+id/action_global_myAccountFragment"
+        app:destination="@id/myAccountFragment" />
+    <action
+        android:id="@+id/action_global_appPreferencesFragment"
+        app:destination="@id/appPreferencesFragment" />
+    <action
+        android:id="@+id/action_global_notificationsFragment"
+        app:destination="@id/notificationsFragment" />
+</navigation>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="splash_logo_size">90dp</dimen>
+
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_28dp">28dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_36dp">36dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_44dp">44dp</dimen>
+    <dimen name="margin_48dp">48dp</dimen>
+    <dimen name="margin_52dp">52dp</dimen>
+    <dimen name="margin_56dp">56dp</dimen>
+    <dimen name="margin_60dp">60dp</dimen>
+    <dimen name="margin_80dp">80dp</dimen>
+    <dimen name="margin_94dp">94dp</dimen>
+
+    <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
+    <dimen name="padding_6dp">6dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_18dp">18dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="padding_24dp">24dp</dimen>
+    <dimen name="padding_28dp">28dp</dimen>
+    <dimen name="padding_32dp">32dp</dimen>
+    <dimen name="padding_60dp">60dp</dimen>
+    <dimen name="padding_70dp">70dp</dimen>
+
+    <dimen name="size_12dp">12dp</dimen>
+    <dimen name="size_24dp">24dp</dimen>
+    <dimen name="size_26dp">26dp</dimen>
+    <dimen name="size_30dp">30dp</dimen>
+    <dimen name="size_32dp">32dp</dimen>
+    <dimen name="size_40dp">40dp</dimen>
+    <dimen name="size_42dp">42dp</dimen>
+    <dimen name="size_43dp">43dp</dimen>
+    <dimen name="size_46dp">46dp</dimen>
+    <dimen name="size_58dp">58dp</dimen>
+    <dimen name="size_69dp">69dp</dimen>
+    <dimen name="size_92dp">92dp</dimen>
+    <dimen name="size_96dp">96dp</dimen>
+    <dimen name="size_120dp">120dp</dimen>
+    <dimen name="size_130dp">130dp</dimen>
+    <dimen name="size_140dp">140dp</dimen>
+    <dimen name="size_150dp">150dp</dimen>
+    <dimen name="size_200dp">200dp</dimen>
+
+    <dimen name="corner_radius_extra_large">32dp</dimen>
+    <dimen name="corner_radius_large">16dp</dimen>
+    <dimen name="corner_radius_medium">8dp</dimen>
+    <dimen name="corner_radius_smallish">6dp</dimen>
+    <dimen name="corner_radius_small">4dp</dimen>
+
+    <dimen name="elevation_max">32dp</dimen>
+    <dimen name="elevation_extra_large">16dp</dimen>
+    <dimen name="elevation_large">12dp</dimen>
+    <dimen name="elevation_medium">8dp</dimen>
+    <dimen name="elevation_small">4dp</dimen>
+    <dimen name="elevation_none">0dp</dimen>
+
+    <dimen name="edit_text_stroke">1dp</dimen>
+    <dimen name="edit_text_corner_radius">5dp</dimen>
+    <dimen name="edit_text_height">56dp</dimen>
+
+    <dimen name="message_corner_radius">6dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="fade_edge_size">16dp</dimen>
+
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="text_size_11sp">11sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+    <dimen name="text_size_32sp">32sp</dimen>
+    <dimen name="text_size_42sp">42sp</dimen>
+
+    <!-- View Pager Indicator -->
+    <dimen name="viewpager_indicator_margin">6dp</dimen>
+
+    <!-- Tab View -->
+    <dimen name="tab_view_text_size">14sp</dimen>
+    <dimen name="tab_view_height">35dp</dimen>
+    <dimen name="bottom_sheet_peek_height">48dp</dimen>
+    <dimen name="signup_logo_size">80dp</dimen>
+    <dimen name="text_size_26sp">26sp</dimen>
+
+    <dimen name="size_divider">0.5dp</dimen>
+    <dimen name="size_badge_small">8dp</dimen>
+    <dimen name="size_badge_large">12dp</dimen>
+    <dimen name="size_badge_extra_large">16dp</dimen>
+    <dimen name="size_activity_large_image">118dp</dimen>
+    <dimen name="size_activity_small_card">38dp</dimen>
+    <dimen name="size_activity_small_image">24dp</dimen>
+    <dimen name="size_about_us_toolbar_logo">48dp</dimen>
+    <dimen name="size_disclosure">16dp</dimen>
+
+    <dimen name="fade_edge_length_extra_large">64dp</dimen>
+    <dimen name="fade_edge_length_large">32dp</dimen>
+    <dimen name="fade_edge_length_medium">16dp</dimen>
+
+    <dimen name="onboarding_page_indicator_size">3dp</dimen>
+
+    <dimen name="bottom_sheet_dialog_title_horizontal_margin">64dp</dimen>
+    <dimen name="exercise_background_image_size">200dp</dimen>
+    <dimen name="exercise_card_margin_top">144dp</dimen>
+
+    <dimen name="size_fullscreen_player_control_large">40dp</dimen>
+    <dimen name="size_fullscreen_player_control_small">32dp</dimen>
+    <dimen name="size_chat_owl_chat_icon">48dp</dimen>
+    <dimen name="size_chat_message_length_indicator">@dimen/size_24dp</dimen>
+    <dimen name="chat_answer_max_length">500</dimen>
+    <dimen name="padding_40dp">40dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
+    <dimen name="size_thumb_slider">12dp</dimen>
+    <dimen name="size_thumb_slider_small">10dp</dimen>
+    <dimen name="size_track_height">4dp</dimen>
+    <dimen name="activity_fullscreen_image_choice_page_indicator_size">12dp</dimen>
+    <dimen name="fullscreen_image_choice_indicator_size">12dp</dimen>
+    <dimen name="corner_radius_large_negative">-16dp</dimen>
+    <dimen name="size_dot_typing">6dp</dimen>
+    <dimen name="switch_thumb_size">30dp</dimen>
+    <dimen name="switch_track_height">30dp</dimen>
+    <dimen name="switch_track_width">50dp</dimen>
+    <dimen name="activity_card_height">120dp</dimen>
+    <dimen name="activity_card_width">250dp</dimen>
+
+    <dimen name="bottom_navigation_icon_size">30dp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">72dp</dimen>
+    <dimen name="size_week_plan_icon">64dp</dimen>
+    <dimen name="size_20dp">20dp</dimen>
+    <dimen name="tour_chat_owl_icon">52dp</dimen>
+    <dimen name="text_size_40sp">40sp</dimen>
+</resources>

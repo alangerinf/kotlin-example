@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_activity_small_card_view"
+    style="@style/ChatOwlCardViewStyle"
+    android:layout_width="@dimen/activity_card_width"
+    android:layout_height="@dimen/activity_card_height"
+    android:layout_margin="@dimen/margin_8dp"
+    app:cardBackgroundColor="@color/colorPrimaryLight_30"
+    app:cardElevation="@dimen/elevation_large">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.instabug.bug.view.CorneredImageView
+            android:id="@+id/row_activity_therapy_overview_image_view_therapy_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            app:ib_bug_cornerRadius="@dimen/corner_radius_medium"
+            app:ib_bug_roundedCorners="bottomRight"
+            android:src="@drawable/ic_logo_show_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.8" />
+
+        <TextView
+            android:id="@+id/tv_therapy_overview_title"
+            style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/therapy_overview"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/row_activity_therapy_overview_image_view_therapy_overview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

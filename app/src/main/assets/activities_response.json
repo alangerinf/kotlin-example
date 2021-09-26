@@ -1,0 +1,376 @@
+{
+  "activitiesTherapyProgram": [
+    {
+      "id": 1,
+      "name": "Default Plan",
+      "description": "Your free trial will end in 30 days",
+      "isDefault": true,
+      "imageUrl": "https://tyrique.biz",
+      "programActivities": [
+        {
+          "id": 1,
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": false,
+          "isCompleted": false,
+          "isNew": false,
+          "timeDue": {
+            "day": 3,
+            "moment": "midday",
+            "order": 1
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 2,
+            "toolType": "quote",
+            "toolSubtype": "quote",
+            "description": "Mindfulness",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "Create a journal entry",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607576219/chatowl/ic_journal.svg",
+            "mediaType": null,
+            "mediaUrl": null,
+            "quoteContent": "Consectetur aliquam molestias.",
+            "quoteAuthor": "Lorraine Swift",
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test categories",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#A031F8",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        },
+        {
+          "id": 2,
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": false,
+          "isCompleted": false,
+          "isNew": true,
+          "timeDue": {
+            "day": 3,
+            "moment": "evening",
+            "order": 1
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 1,
+            "toolType": "exercise",
+            "toolSubtype": "video",
+            "description": "Therapy Session",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "New Session",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+            "mediaType": "video",
+            "mediaUrl": null,
+            "quoteContent": null,
+            "quoteAuthor": null,
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test category",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#038C8D",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Welcome to your Awesome Therapy Plan!",
+      "description": "Your free trial will end in 30 days",
+      "isDefault": false,
+      "imageUrl": "https://tyrique.biz",
+      "programPosition": {
+        "day": 3,
+        "moment": "morning"
+      },
+      "programActivities": [
+        {
+          "id": 3,
+          "type": "due",
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": false,
+          "isCompleted": true,
+          "isNew": false,
+          "timeDue": {
+            "day": 3,
+            "moment": "morning",
+            "order": 1
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 1,
+            "toolType": "interactive",
+            "toolSubtype": "mood_meter",
+            "description": "Therapy Exercise",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "Check your mood",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+            "mediaType": null,
+            "mediaUrl": null,
+            "quoteContent": null,
+            "quoteAuthor": null,
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test categories",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#02ACEC",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        },
+        {
+          "id": 4,
+          "type": "due",
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": true,
+          "isCompleted": false,
+          "isNew": false,
+          "timeDue": {
+            "day": 2,
+            "moment": "midday",
+            "order": 1
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 2,
+            "toolType": "session",
+            "toolSubtype": "session",
+            "description": "Therapy Session",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "Mandatory session",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+            "mediaType": null,
+            "mediaUrl": null,
+            "quoteContent": "Consectetur aliquam molestias.",
+            "quoteAuthor": "Lorraine Swift",
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test categories",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#A031F8",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        },
+        {
+          "id": 5,
+          "type": "due",
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": false,
+          "isCompleted": false,
+          "isNew": false,
+          "timeDue": {
+            "day": 3,
+            "moment": "midday",
+            "order": 2
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 4,
+            "toolType": "image",
+            "toolSubtype": "image",
+            "description": "Tool Image description test",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "Image of the day",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+            "mediaType": null,
+            "mediaUrl": null,
+            "quoteContent": null,
+            "quoteAuthor": null,
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test categories",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#02ACEC",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        },
+        {
+          "id": 6,
+          "type": "due",
+          "isFree": true,
+          "isLocked": false,
+          "isMandatory": false,
+          "isCompleted": false,
+          "isNew": true,
+          "timeDue": {
+            "day": 3,
+            "moment": "afternoon",
+            "order": 1
+          },
+          "duration": null,
+          "priority": null,
+          "sendsEmail": false,
+          "sendsPushNotification": false,
+          "activityTool": {
+            "id": 1,
+            "toolType": "exercise",
+            "toolSubtype": "video",
+            "description": "Therapy Session",
+            "categoryId": 1,
+            "language": "en-US",
+            "title": "New Session",
+            "instructions": null,
+            "programId": null,
+            "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+            "mediaType": "video",
+            "mediaUrl": null,
+            "quoteContent": null,
+            "quoteAuthor": null,
+            "toolCategoryName": {
+              "name": "Relax",
+              "description": "test category",
+              "language": "en-US",
+              "categoryDetails": {
+                "id": 1,
+                "color": "#038C8D",
+                "imageUrl": "https://alena.name"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activitiesSuggested": [
+    {
+      "id": 7,
+      "isFree": true,
+      "isLocked": false,
+      "isMandatory": true,
+      "isCompleted": false,
+      "isNew": true,
+      "timeDue": {
+        "day": 3,
+        "moment": "afternoon",
+        "order": 1
+      },
+      "duration": null,
+      "priority": null,
+      "sendsEmail": false,
+      "sendsPushNotification": false,
+      "activityTool": {
+        "id": 1,
+        "toolType": "exercise",
+        "toolSubtype": "video",
+        "description": "Tool Exercise description test",
+        "categoryId": 1,
+        "language": "en-US",
+        "title": "Mandatory session",
+        "instructions": null,
+        "programId": null,
+        "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+        "mediaType": "video",
+        "mediaUrl": null,
+        "quoteContent": null,
+        "quoteAuthor": null,
+        "toolCategoryName": {
+          "name": "Relax",
+          "description": "test category",
+          "language": "en-US",
+          "categoryDetails": {
+            "id": 1,
+            "color": "#038C8D",
+            "imageUrl": "https://alena.name"
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "isFree": true,
+      "isLocked": true,
+      "isMandatory": false,
+      "isCompleted": false,
+      "isNew": false,
+      "timeDue": {
+        "day": 3,
+        "moment": "evening",
+        "order": 1
+      },
+      "duration": null,
+      "priority": null,
+      "sendsEmail": false,
+      "sendsPushNotification": false,
+      "activityTool": {
+        "id": 3,
+        "toolType": "session",
+        "toolSubtype": "session",
+        "description": "Therapy Session",
+        "categoryId": 1,
+        "language": "en-US",
+        "title": "Suggested session",
+        "instructions": null,
+        "programId": null,
+        "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1607574737/chatowl/ic_activity_large_image_placeholder.png",
+        "mediaType": null,
+        "mediaUrl": null,
+        "quoteContent": "Deleniti qui fuga qui quibusdam ad.",
+        "quoteAuthor": "Isabel White",
+        "toolCategoryName": {
+          "name": "Relax",
+          "description": "test categories",
+          "language": "en-US",
+          "categoryDetails": {
+            "id": 1,
+            "color": "#038C8D",
+            "imageUrl": "https://alena.name"
+          }
+        }
+      }
+    }
+  ]
+}

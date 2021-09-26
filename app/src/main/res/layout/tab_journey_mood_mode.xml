@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        app:cardBackgroundColor="@color/dark"
+        app:cardCornerRadius="15dp"
+        app:contentPaddingBottom="4dp"
+        app:contentPaddingLeft="17dp"
+        app:contentPaddingRight="17dp"
+        app:contentPaddingTop="4dp"
+        android:id="@+id/card">
+
+        <TextView
+            android:id="@+id/tView_modeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/averta_semibold"
+            tools:text="Hope"
+            android:textColor="@color/emotion_loneliness"
+            android:textSize="@dimen/text_size_14sp" />
+    </androidx.cardview.widget.CardView>
+</layout>

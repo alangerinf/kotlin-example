@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.chatowl.presentation.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_mediaExercise"
+            app:destination="@id/mediaExercise"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_home_to_quoteExercise"
+            app:destination="@id/quoteExercise"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_home_to_imageExercise"
+            app:destination="@id/imageExercise"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_home_to_exerciseLockedDialog"
+            app:destination="@id/exerciseLockedDialog" />
+
+        <action
+            android:id="@+id/action_home_to_noInternetDialog"
+            app:destination="@id/noInternetDialog" />
+
+        <action
+            android:id="@+id/action_home_to_chatHistoryFragment"
+            app:destination="@id/chatHistoryFragment" />
+
+        <action
+            android:id="@+id/action_home_to_appTourFragment"
+            app:destination="@id/appTourFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/appTourFragment"
+        android:name="com.chatowl.presentation.apptour.AppTourFragment"
+        android:label="AppTourFragment"
+        tools:layout="@layout/fragment_app_tour" >
+
+        <argument
+            android:name="appTourData"
+            app:argType="com.chatowl.data.entities.apptour.AppTourData"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mediaExercise"
+        android:name="com.chatowl.presentation.toolbox.mediaexercise.MediaExerciseFragment"
+        android:label="MediaExerciseFragment"
+        tools:layout="@layout/fragment_media_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quoteExercise"
+        android:name="com.chatowl.presentation.toolbox.quote.QuoteExerciseFragment"
+        android:label="QuoteExerciseFragment"
+        tools:layout="@layout/fragment_quote_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageExercise"
+        android:name="com.chatowl.presentation.toolbox.image.ImageExerciseFragment"
+        android:label="ImageExerciseFragment"
+        tools:layout="@layout/fragment_image_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatHistoryFragment"
+        android:name="com.chatowl.presentation.chathistory.ChatHistoryFragment"
+        android:label="ChatHistoryFragment"
+        tools:layout="@layout/fragment_chat_history">
+
+        <argument
+            android:name="chatSessionId"
+            app:argType="integer" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/exerciseLockedDialog"
+        android:name="com.chatowl.presentation.toolbox.exerciselocked.ExerciseLockedDialogFragment"
+        android:label="ExerciseLockedDialog"
+        tools:layout="@layout/dialog_exercise_locked">
+
+        <argument
+            android:name="message"
+            app:argType="com.chatowl.data.entities.toolbox.ExerciseLockedMessage" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/noInternetDialog"
+        android:name="com.chatowl.presentation.nointernet.NoInternetDialogFragment"
+        android:label="NoInternetDialog"
+        tools:layout="@layout/dialog_no_internet" />
+
+</navigation>

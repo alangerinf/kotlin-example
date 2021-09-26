@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_24dp"
+    android:layout_marginVertical="@dimen/margin_8dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/dark"
+    app:cardCornerRadius="@dimen/corner_radius_medium"
+    app:cardElevation="@dimen/elevation_large">
+
+    <TextView
+        android:id="@+id/row_flows_text_view_name"
+        style="@style/ChatOwlTextViewStyle.Smallish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3sp"
+        android:padding="@dimen/padding_16dp"
+        tools:text="Here goes the name of the Flow, it might be long." />
+
+</androidx.cardview.widget.CardView>

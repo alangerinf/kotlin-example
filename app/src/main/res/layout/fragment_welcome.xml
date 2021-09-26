@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_welcome_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iView_Volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:elevation="@dimen/size_50dp"
+            android:src="@drawable/ic_volume_welcome_on"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_welcome_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_welcome"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_gradient_bottom" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_gradient_top" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fragment_welcome_image_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_welcome_owl"
+            app:layout_constraintBottom_toBottomOf="@+id/tViewTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75" />
+
+        <TextView
+            android:id="@+id/tViewTitle"
+            style="@style/ChatOwlTextViewStyle.LightPrimary"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/averta_semibold"
+            android:gravity="center"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="Hi there {Nickname},\nlong time no see!"
+            android:textColor="@color/bg_light_mode"
+            android:textSize="@dimen/text_size_22sp"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_welcome_text_view_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_welcome_text_view_body"
+            style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_60dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="Do you mind if I give you a quick\nupdate on what has happened since\nyou left?"
+            android:textColor="@color/bg_light_mode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.52"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/sounds_great"
+            android:textColor="@color/bg_light_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_text_view_body" />
+
+        <TextView
+            android:id="@+id/btnNoThanks"
+            style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/averta_semibold"
+            android:padding="@dimen/padding_8dp"
+            android:text="@string/no_thanks"
+            android:textColor="@color/bg_light_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_current_plan_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_current_plan_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:toolbarTitle="@string/therapy_plan" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_current_plan_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/fragment_current_plan_group_active_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="fragment_current_plan_text_view_name, fragment_current_plan_text_view_read_more, fragment_current_plan_text_view_version, fragment_current_plan_view_divider, fragment_current_plan_recycler_view, fragment_current_plan_button_change_plan" />
+
+            <TextView
+                android:id="@+id/fragment_current_plan_text_view_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:fontFamily="sans-serif-medium"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="EMDR: Reprogramming your brain" />
+
+            <TextView
+                android:id="@+id/fragment_current_plan_text_view_read_more"
+                style="@style/ChatOwlTextViewStyle.Smallish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/read_more"
+                android:textColor="@color/selector_color_primary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_current_plan_text_view_name" />
+
+            <TextView
+                android:id="@+id/fragment_current_plan_text_view_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:background="@drawable/background_primary_rounded_small"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.03"
+                android:paddingHorizontal="@dimen/padding_16dp"
+                android:paddingVertical="@dimen/padding_2dp"
+                android:text=""
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="@+id/fragment_current_plan_text_view_name"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_current_plan_text_view_name" />
+
+            <View
+                android:id="@+id/fragment_current_plan_view_divider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_divider"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:background="@color/colorPrimary_20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_current_plan_text_view_version" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_current_plan_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingVertical="@dimen/padding_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_current_plan_view_divider"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/row_week_active_plan" />
+
+            <Button
+                android:id="@+id/fragment_current_plan_button_change_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:text="@string/i_want_to_change_my_plan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_current_plan_recycler_view" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/fragment_current_plan_group_available_plans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:constraint_referenced_ids="fragment_plan_list_owl_image, fragment_plan_title, fragment_plan_subtitle, fragment_current_plan_recycler_view_available_plans" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fragment_plan_list_owl_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_chat_owl_plans"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/fragment_plan_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/fragment_plan_list_owl_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white_80"
+                android:textStyle="bold"
+                android:text="@string/available_plans_title"
+
+                />
+
+            <TextView
+                android:id="@+id/fragment_plan_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="25dp"
+                android:textColor="@color/white_80"
+                app:layout_constraintTop_toBottomOf="@id/fragment_plan_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/available_plans_subtitle"
+                />
+            <!--
+            <TextView
+                android:id="@+id/fragment_current_plan_text_view_available_plans_introduction"
+                style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3sp"
+                android:text="@string/available_plans_introduction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_current_plan_recycler_view_available_plans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_32dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/fragment_plan_subtitle"
+                tools:itemCount="4"
+                tools:listitem="@layout/row_plan_preview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

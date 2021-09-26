@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "name": "United States Emergency Number",
+      "number": "911"
+    },
+    {
+      "name": "National Suicide Prevention Lifeline",
+      "number": "+1 (800) 273-8255"
+    },
+    {
+      "name": "National Domestic Violence Hotline",
+      "number": "+1 (800) 799-7233"
+    },
+    {
+      "name": "Family Violence Helpline",
+      "number": "+1 (800) 966-6228"
+    },
+    {
+      "name": "National Hopeline Network",
+      "number": "+1 (800) 784-2433"
+    },
+    {
+      "name": "TREVOR Crisis Hotline",
+      "number": "+1 (866) 488-7386"
+    },
+    {
+      "name": "Self-Harm Hotline",
+      "number": "+1 (800) 366-8288"
+    },
+    {
+      "name": "Planned Parenthood Hotline",
+      "number": "+1 (800) 230-7526"
+    },
+    {
+      "name": "American Association of Poison Control Centers",
+      "number": "+1 (800) 222-1222"
+    },
+    {
+      "name": "Alcoholism & Drug Dependency Hope Line",
+      "number": "+1 (800) 622-2255"
+    },
+    {
+      "name": "National Crisis Line, Anorexia and Bulimia",
+      "number": "+1 (800) 233-4357"
+    },
+    {
+      "name": "GLBT Hotline",
+      "number": "+1 (888) 843-4564"
+    }
+  ],
+  "success": true
+}

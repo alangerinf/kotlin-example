@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chalk">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_time_slots_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:isBackEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:toolbarTitle="@string/time_slot_definition" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/fragment_time_slots_linear_progress_indicator"
+        style="@style/ChatOwlLinearProgressIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_time_slots_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_time_slots_button_save"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_time_slots_text_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:text="@string/time_slot_definition_title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="32dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/morning"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+                <TextView
+                    android:id="@+id/fragment_time_slots_text_view_morning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edit_text_default"
+                    android:gravity="center"
+                    android:ems="4"
+                    android:paddingHorizontal="@dimen/padding_8dp"
+                    android:paddingVertical="@dimen/padding_4dp"
+                    android:text="00:00"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_divider"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/midday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+                <TextView
+                    android:id="@+id/fragment_time_slots_text_view_midday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edit_text_default"
+                    android:gravity="center"
+                    android:ems="4"
+                    android:paddingHorizontal="@dimen/padding_8dp"
+                    android:paddingVertical="@dimen/padding_4dp"
+                    android:text="00:00"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_divider"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/afternoon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+                <TextView
+                    android:id="@+id/fragment_time_slots_text_view_afternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edit_text_default"
+                    android:gravity="center"
+                    android:ems="4"
+                    android:paddingHorizontal="@dimen/padding_8dp"
+                    android:paddingVertical="@dimen/padding_4dp"
+                    android:text="00:00"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_divider"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_32dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/evening"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+                <TextView
+                    android:id="@+id/fragment_time_slots_text_view_evening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edit_text_default"
+                    android:gravity="center"
+                    android:ems="4"
+                    android:paddingHorizontal="@dimen/padding_8dp"
+                    android:paddingVertical="@dimen/padding_4dp"
+                    android:text="00:00"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_time_slots_text_view_title" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_divider"
+                android:layout_marginHorizontal="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/gray5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/fragment_time_slots_button_save"
+        style="@style/ChatOwlButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_time_slots_text_view_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_time_slots_text_view_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_60dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/padding_4dp"
+        android:text="@string/cancel"
+        android:textColor="@color/selector_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="isBackEnabled" format="boolean" />
+        <attr name="light" format="boolean" />
+        <attr name="showDivider" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="vpiIndicatorMargin" format="dimension" />
+        <attr name="vpiIndicatorTint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MyEditText">
+        <attr name="android:background" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:enabled" />
+        <attr name="android:textColor" />
+        <attr name="metErrorTextGone" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsItem">
+        <attr name="itemName" format="string" />
+        <attr name="android:src" />
+        <attr name="showSettingsDisclosure" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="NotificationPreferencesItem">
+        <attr name="notificationName" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="AppPreferencesItem">
+        <attr name="preferenceName" format="string" />
+        <attr name="preferenceDescription" format="string" />
+        <attr name="android:textColor" />
+        <attr name="showDisclosure" format="boolean" />
+        <attr name="showSwitch" format="boolean" />
+        <attr name="mediumFont" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MyAccountItem">
+        <attr name="name" format="string" />
+        <attr name="value" format="string" />
+        <attr name="editable" format="boolean" />
+    </declare-styleable>
+
+</resources>

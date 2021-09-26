@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_tab_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <FrameLayout
+        android:id="@+id/tab_nav_host_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_tab_barrier"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/fragment_tab_barrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="fragment_tab_view_bottom_anchor, tab_bottom_navigation_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:alpha="0.5"
+        android:background="@drawable/shape_shadow_bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_nav_host_container" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/tab_bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/dark"
+        app:itemIconSize="40dp"
+        app:itemTextColor="@color/selector_color_bottom_navigation"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_tab_view_bottom_anchor"
+        app:menu="@menu/menu_main_navigation" />
+
+    <FrameLayout
+        android:id="@+id/fragment_tab_view_bottom_anchor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

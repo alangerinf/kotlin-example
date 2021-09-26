@@ -1,0 +1,36 @@
+{
+  "programs": [
+    {
+      "id": 1,
+      "isActive": true,
+      "name": "First Plan",
+      "description": "And a description",
+      "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1608660084/chatowl/background_start_plan.png"
+    },
+    {
+      "id": 2,
+      "isActive": false,
+      "name": "Inactive Plan",
+      "description": "And a description",
+      "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1608660084/chatowl/background_start_plan.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Category name",
+      "description": "Exercises that help you enjoy a good night’s sleep.",
+      "isNew": true,
+      "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1608660084/chatowl/background_tool_category.png",
+      "exerciseCount": 5
+    },
+    {
+      "id": 2,
+      "name": "Another category name",
+      "description": "Exercises that help you run faster.",
+      "isNew": false,
+      "imageUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1608660084/chatowl/background_tool_category.png",
+      "exerciseCount": 2
+    }
+  ]
+}

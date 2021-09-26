@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_menu_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:isBackEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showDivider="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_menu_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_my_message"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/padding_8dp"
+                android:text="@string/my_messages"
+                app:drawableEndCompat="@drawable/ic_badge" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_therapy_history"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_therapy_plan_history" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_my_settings"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_settings" />
+
+            <TextView
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_about_chat_owl"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_chat_owl" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_contact_us"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_us" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_feedback"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feedback" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_help"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_log_out"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout" />
+
+            <TextView
+                android:id="@+id/fragment_menu_text_view_crisis_support"
+                style="@style/ChatOwlMenuTextVieWStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/margin_8dp"
+                android:text="@string/crisis_support"
+                android:textColor="@color/red"
+                app:drawableEndCompat="@drawable/ic_exclamation" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

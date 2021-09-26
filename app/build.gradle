@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: "androidx.navigation.safeargs"
+
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.chatowl"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 46
+        versionName "0.9.9c"
+    }
+    flavorDimensions "default"
+    productFlavors {
+        // Internal testing and development
+        preview {
+            buildConfigField("String", "BASE_URL", "\"https://api-preview.chatowl.com/api/mobile/\"")
+            buildConfigField("String", "CHAT_URL", "\"https://api-preview.chat.chatowl.com\"")
+            buildConfigField("String", "USER_POOL_ID", "\"us-east-1_zsvCHPIHC\"")
+            buildConfigField("String", "CLIENT_ID", "\"7d718em3f7sivn0ov3ocuh6nmr\"")
+            buildConfigField("String", "CLIENT_SECRET", "\"gjdr52k0k2qlopg6nuev85m7n4v4453hfl4qo958hbhn0629l4d\"")
+            buildConfigField("String", "REGION", "\"us-east-1\"")
+            buildConfigField("String", "INSTABUG_API_KEY", "\"5ed4f3c6dd60be52cf2b72df07cffbeb\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.activity:activity-ktx:1.3.0-alpha07'
+    implementation "androidx.fragment:fragment-ktx:1.3.3"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'com.squareup.moshi:moshi-kotlin:1.8.0'
+    implementation 'com.squareup.moshi:moshi-kotlin:1.8.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0'
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    // Cognito
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.16.13'
+    // Work Manager
+    implementation "androidx.work:work-runtime-ktx:$worker_version"
+    // Exo Player
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.3'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.11.3'
+    // Socket.io
+    implementation('io.socket:socket.io-client:2.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+    // Instabug
+    implementation 'com.instabug.library:instabug:10.2.0'
+    // Keyboard visibility library
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2'
+    // Lottie
+    implementation 'com.airbnb.android:lottie:3.6.1'
+
+    //BoM for firebase and push notifications
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    //Charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+}
+repositories {
+    mavenCentral()
+}

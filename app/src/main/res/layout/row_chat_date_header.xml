@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/margin_8dp"
+    android:background="@drawable/background_gradient_primary"
+    android:paddingVertical="@dimen/padding_12dp">
+
+    <TextView
+        android:id="@+id/row_chat_date_header_text_view"
+        style="@style/ChatOwlTextViewStyle.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:textColor="@color/colorPrimaryLight_80"
+        android:textSize="@dimen/text_size_12sp"
+        tools:text="Today" />
+
+</FrameLayout>

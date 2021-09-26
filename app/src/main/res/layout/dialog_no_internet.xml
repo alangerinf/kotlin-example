@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_no_internet_layout_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dialog_no_internet_text_view_title"
+            style="@style/ChatOwlBottomSheetTitleTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_connection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialog_no_internet_image_view" />
+
+        <TextView
+            android:id="@+id/dialog_no_internet_text_view_body"
+            style="@style/ChatOwlTextViewStyle.Smallish.LightPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:gravity="center"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="@string/no_internet_connection_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_no_internet_text_view_title" />
+
+        <ImageView
+            android:id="@+id/dialog_no_internet_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_no_wifi" />
+
+        <Button
+            android:id="@+id/dialog_no_internet_button_ok"
+            style="@style/ChatOwlButtonStyle"
+            android:layout_marginTop="@dimen/margin_80dp"
+            android:layout_marginBottom="@dimen/margin_60dp"
+            android:text="@string/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_no_internet_text_view_body" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

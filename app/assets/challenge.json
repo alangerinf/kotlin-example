@@ -1,0 +1,22 @@
+{
+  "challenge": {
+    "id_challenge": 226,
+    "owner": {
+      "id_user_mobile": 5,
+      "name": "Ignacio Deandreis",
+      "mobile_number": "598 99483673"
+    },
+    "code": "q86p4R",
+    "status": "ONGOING",
+    "name": "Aa",
+    "description": "A",
+    "created_at": "2020-05-17T02:48:23Z",
+    "entry_date": "2020-05-17T03:07:29Z",
+    "updated_at": "2020-05-17T02:48:23Z",
+    "entry_amount": 1,
+    "total_amount": 0,
+    "entry_currency": "USD",
+    "entry_usd_amount": 1,
+    "max_members": 2
+  }
+}

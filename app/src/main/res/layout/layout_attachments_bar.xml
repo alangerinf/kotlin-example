@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="100dp"
+    android:background="@color/dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_attachments_bar_layout_edit_controls"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/attachments_camera_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_camera_solid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/attachments_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_gallery_solid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/attachments_audio_button"
+            app:layout_constraintStart_toEndOf="@+id/attachments_camera_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/attachments_audio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_microphone_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/attachments_video_button"
+            app:layout_constraintStart_toEndOf="@+id/attachments_image_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/attachments_video_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:src="@drawable/ic_videocam_18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_attachments_bar_layout_recording_controls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        android:layout_marginVertical="@dimen/margin_8dp"
+        android:background="@drawable/background_white_rounded_extra_large"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/layout_attachments_bar_text_view_recording_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/padding_16dp"
+            android:text="@string/cancel"
+            android:textColor="@color/selector_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/layout_attachments_bar_image_view_progress_empty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_record_progress_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layout_attachments_bar_text_view_recording_duration"
+            app:layout_constraintStart_toEndOf="@+id/layout_attachments_bar_text_view_recording_cancel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/layout_attachments_bar_image_view_progress_full"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/margin_8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_record_progress_clip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layout_attachments_bar_text_view_recording_duration"
+            app:layout_constraintStart_toEndOf="@+id/layout_attachments_bar_text_view_recording_cancel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/layout_attachments_bar_text_view_recording_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="0:00"
+            android:textColor="@color/gray10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layout_attachments_bar_image_view_recording_send"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/layout_attachments_bar_image_view_recording_send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_send_accent"
+            android:tintMode="src_atop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/selector_view_pressed_dark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

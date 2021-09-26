@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/dark"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/elevation_medium">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_16dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_chat_answer_text_layout_multiple_choice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/padding_24dp"
+                android:paddingTop="@dimen/padding_28dp"
+                android:paddingBottom="@dimen/padding_28dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/layout_chat_answer_text_flow_multiple_choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:flow_horizontalGap="@dimen/padding_16dp"
+                    app:flow_horizontalBias="1"
+                    app:flow_horizontalStyle="packed"
+                    app:flow_verticalGap="@dimen/padding_16dp"
+                    app:flow_wrapMode="chain"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_chat_answer_text_layout_free_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/layout_chat_answer_text_edit_text_message"
+                style="@style/ChatOwlEditTextStyle.SingleLine"
+                android:inputType="textMultiLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_type_message"
+                android:maxLength="@integer/chat_response_max_length"
+                android:maxLines="@integer/chat_response_max_lines"
+                android:paddingHorizontal="@dimen/size_24dp"
+                android:paddingVertical="@dimen/padding_16dp"
+                android:textColor="@color/lightViolet"
+                android:textSize="@dimen/text_size_16sp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_barrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/layout_chat_answer_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="layout_chat_answer_text_layout_send, layout_chat_answer_text_space, layout_chat_answer_text_image_button_back, layout_chat_answer_text_text_view_skip, layout_chat_answer_text_text_single_choice" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_chat_answer_text_layout_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/layout_chat_answer_text_progress_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    android:background="@drawable/background_circle"
+                    android:backgroundTint="@color/lightViolet_20"
+                    android:indeterminate="false"
+                    android:max="@integer/chat_response_max_length"
+                    android:progress="200"
+                    android:rotation="180"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    app:indicatorInset="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_chat_answer_image_view_send"
+                    app:layout_constraintEnd_toStartOf="@+id/layout_chat_answer_image_view_send"
+                    app:layout_constraintTop_toTopOf="@+id/layout_chat_answer_image_view_send"
+                    app:trackColor="@android:color/transparent" />
+
+                <ImageButton
+                    android:id="@+id/layout_chat_answer_image_view_send"
+                    style="@style/ChatOwlImageButtonStyle.Tinted"
+                    android:layout_width="@dimen/size_42dp"
+                    android:layout_height="@dimen/size_42dp"
+                    android:layout_marginVertical="@dimen/margin_8dp"
+                    android:layout_marginEnd="@dimen/margin_16dp"
+                    android:src="@drawable/ic_send_violet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/layout_chat_answer_text_text_view_skip"
+                style="@style/ChatOwlChoiceTextStyle"
+                android:layout_marginVertical="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_24dp"
+                android:text="Don't wanna say"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/layout_chat_answer_text_text_single_choice"
+                style="@style/ChatOwlChoiceTextStyle"
+                android:layout_marginVertical="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_24dp"
+                app:layout_constraintStart_toEndOf="@id/layout_chat_answer_text_image_button_back"
+                android:text="Choice"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                 />
+
+            <ImageButton
+                android:id="@+id/layout_chat_answer_text_image_button_back"
+                style="@style/ChatOwlImageButtonStyle"
+                android:layout_width="@dimen/size_42dp"
+                android:layout_height="@dimen/size_42dp"
+                android:layout_marginStart="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:src="@drawable/ic_chat_message_back_selector"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_chat_answer_text_space"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+            <Space
+                android:id="@+id/layout_chat_answer_text_space"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_32dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

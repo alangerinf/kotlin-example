@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:id="@+id/app_tour_background_main_container"
+    tools:context=".presentation.apptour.AppTourBackgroundFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <include
+        android:id="@+id/app_tour_background_current_plan"
+        layout="@layout/fragment_current_plan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/app_tour_backgroud_bottom_navigation_view"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        tools:visibility="gone"
+        />
+
+    <include
+        android:id="@+id/app_tour_background_chat"
+        layout="@layout/fragment_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/app_tour_backgroud_bottom_navigation_view"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        tools:visibility="gone"
+        />
+
+    <include
+        android:id="@+id/app_tour_background_toolbox"
+        layout="@layout/fragment_toolbox_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/app_tour_backgroud_bottom_navigation_view"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        tools:visibility="gone"
+        />
+
+    <include
+        android:id="@+id/app_tour_background_journey"
+        layout="@layout/fragment_journey"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/app_tour_backgroud_bottom_navigation_view"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        tools:visibility="gone"
+        />
+
+
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_large_chat"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_blink_small_chat"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_blink_small_chat"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_blink_small_chat"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_blink_small_chat"
+        tools:layout_height="100dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_small_chat"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_chat_icon_guideline"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_toolbox_icon_guideline"
+        tools:layout_height="80dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:layout_width="80dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_large_toolbox"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_blink_small_toolbox"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_blink_small_toolbox"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_blink_small_toolbox"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_blink_small_toolbox"
+        tools:layout_height="100dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_small_toolbox"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_toolbox_icon_guideline"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_plan_icon_guideline"
+        tools:layout_height="80dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:layout_width="80dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_large_plan"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_blink_small_plan"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_blink_small_plan"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_blink_small_plan"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_blink_small_plan"
+        tools:layout_height="100dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_small_plan"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_plan_icon_guideline"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_journey_icon_guideline"
+        tools:layout_height="80dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:layout_width="80dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_large_journey"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_blink_small_journey"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_blink_small_journey"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_blink_small_journey"
+        app:layout_constraintEnd_toEndOf="@id/app_tour_backgroud_blink_small_journey"
+        tools:layout_height="100dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/app_tour_backgroud_blink_small_journey"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintTop_toTopOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintBottom_toBottomOf="@id/app_tour_backgroud_bottom_navigation_view"
+        app:layout_constraintStart_toStartOf="@id/app_tour_backgroud_journey_icon_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_height="80dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:layout_width="80dp" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/app_tour_backgroud_journey_icon_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/app_tour_backgroud_plan_icon_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/app_tour_backgroud_toolbox_icon_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/app_tour_backgroud_chat_icon_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/app_tour_backgroud_bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/dark"
+        app:itemIconSize="40dp"
+        app:itemTextColor="@color/selector_color_bottom_navigation"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_main_navigation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

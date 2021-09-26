@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ChatOwlCardViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/activity_card_height"
+    android:layout_marginHorizontal="@dimen/margin_24dp"
+    android:layout_marginVertical="@dimen/margin_8dp"
+    app:cardElevation="@dimen/elevation_large">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/row_activity_large_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_activity_large_image_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="33:12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_gradient_radial_large" />
+
+        <TextView
+            android:id="@+id/row_activity_large_text_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_12dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="2"
+            app:layout_constraintEnd_toStartOf="@+id/row_activity_large_image_view_favorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Some great exercise" />
+
+        <TextView
+            android:id="@+id/row_activity_large_text_tag"
+            style="@style/ChatOwlTextViewStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:background="@drawable/background_primary_rounded_small"
+            android:drawablePadding="@dimen/padding_4dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingHorizontal="@dimen/margin_8dp"
+            android:paddingVertical="@dimen/padding_2dp"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/row_activity_large_text_view_title"
+            app:layout_constraintTop_toBottomOf="@+id/row_activity_large_text_view_title"
+            tools:drawableEnd="@drawable/ic_star"
+            tools:text="@string/tag_new"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/row_activity_large_image_view_favorite"
+            android:layout_width="@dimen/size_12dp"
+            android:layout_height="@dimen/size_12dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:layout_marginEnd="@dimen/margin_32dp"
+            android:contentDescription="@string/favorite"
+            android:src="@drawable/ic_favorite_filled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/row_activity_large_image_view_icon"
+            android:layout_width="@dimen/size_30dp"
+            android:layout_height="@dimen/size_30dp"
+            android:layout_margin="@dimen/margin_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/ic_audio_toolbox" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/row_activity_large_guideline_40"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/row_activity_large_guideline_60"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <View
+            android:id="@+id/row_activity_large_layout_completed_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/transparent_white_65"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/row_activity_large_text_view_description"
+            style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:layout_marginBottom="@dimen/margin_8dp"
+            android:drawablePadding="@dimen/padding_4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/row_activity_large_image_view_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:drawableStartCompat="@drawable/ic_clock"
+            tools:text="15 min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

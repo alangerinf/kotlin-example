@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="statusBarColor">#E8E8E8</color>
+    <color name="splashBackgroundColor">#AAABE7</color>
+
+    <color name="primaryTextColor">@color/bg_light_mode</color>
+    <color name="hintTextColor">@color/lightViolet_50</color>
+    <color name="disabledTextColor">@color/lightViolet_20</color>
+
+    <color name="colorAccent">@color/green</color>
+    <color name="colorAccentPressed">#78DAC4</color>
+    <color name="colorAccentLight">#C3EEE4</color>
+    <color name="colorAccent_80">#CC20C5A0</color>
+    <color name="colorAccent_50">#8020C5A0</color>
+    <color name="colorAccent_20">#3320C5A0</color>
+    <color name="colorAccent_08">#1420C5A0</color>
+
+    <color name="colorPrimaryPressed">#02ACEC</color>
+    <color name="colorPrimary2">#B34180CD</color>
+    <color name="colorPrimary2_08">#144180CD</color>
+    <color name="colorPrimary3">#2F80ED</color>
+    <color name="colorPrimary3_20">#332F80ED</color>
+    <color name="colorPrimary_70">#B302ACEC</color>
+    <color name="colorPrimary_50">@color/violet_50</color>
+    <color name="colorPrimary_05">#29787880</color>
+    <color name="colorPrimaryDark">@color/darkViolet</color>
+
+    <color name="colorPrimary">@color/violet</color>
+    <color name="colorPrimary_20">@color/violet_20</color>
+    <color name="colorPrimaryLight">@color/lightViolet</color>
+    <color name="colorPrimaryLight_08">@color/lightViolet_08</color>
+    <color name="colorPrimaryLight_20">@color/lightViolet_20</color>
+    <color name="colorPrimaryLight_30">@color/lightViolet_30</color>
+    <color name="colorPrimaryLight_50">@color/lightViolet_50</color>
+    <color name="colorPrimaryLight_80">@color/lightViolet_80</color>
+
+
+    <color name="bg_light_mode">#E8E8FF</color>
+
+    <color name="colorWidgetBackground">@color/violetAlt</color>
+    <color name="colorWidgetBackgroundPressed">@color/violetAlt</color>
+
+    <color name="transparent_white_50">#80FFFFFF</color>
+    <color name="transparent_white_65">#A6FFFFFF</color>
+    <color name="transparent_white_80">#CCFFFFFF</color>
+    <color name="transparent_white">#00FFFFFF</color>
+
+
+    <color name="color_edit_text_background">#2f2f60</color>
+
+    <color name="viewPressed">#1A8A8A8A</color>
+    <color name="viewPressedDark">#408A8A8A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_40">#666666</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="whitePressed">#B3FFFFFF</color>
+    <color name="whitePressedOpaque">#F6F6F6</color>
+    <color name="chalk">#FDFDFD</color>
+    <color name="red_light">#FF8F8F</color>
+
+    <color name="page_indicator_selected">@color/yellow</color>
+    <color name="page_indicator_unselected">@color/yellow_20</color>
+
+    <!--  TEXT COLORS  -->
+    <color name="black1">#00011B</color>
+    <color name="black1_80">#CC010101</color>
+    <color name="black1_60">#99010101</color>
+    <color name="black1_40">#66010101</color>
+    <color name="black1_20">#33010101</color>
+    <color name="black1_5">#0D010101</color>
+    <color name="gray1">#333333</color>
+    <color name="gray2">#4F4F4F</color>
+    <color name="gray3">#828282</color>
+    <color name="gray4">#52191919</color>
+    <color name="gray5">#E0E0E0</color>
+    <color name="gray6">#FAFAFA</color>
+    <color name="gray7">#413E3E</color>
+    <color name="gray20">#B4C1C1</color>
+    <color name="gray20_20">#33B4C1C1</color>
+    <color name="gray20_50">#80B4C1C1</color>
+    <color name="gray9">#898A8D</color>
+    <color name="gray10">#777C7C</color>
+    <color name="gray11">#F3F4F4</color>
+    <color name="gray30">#F5F5F5</color>
+    <color name="blackMediumEmphasis">#99000000</color>
+    <color name="blackHighEmphasis">#DE000000</color>
+    <color name="blackLowEmphasis">#66000000</color>
+    <color name="blackTextInput">#333333</color>
+    <color name="blackChatBackgroundHard">#9E000000</color>
+    <color name="blackChatBackgroundSoft">#66000000</color>
+
+    <color name="green1">#20C5A0</color>
+    <color name="green2">#12E7B7</color>
+    <color name="green3">#038C8D</color>
+
+    <color name="gray1Opacity">#80333333</color>
+
+    <color name="purple">#A031F8</color>
+    <color name="purple3">#D563FF</color>
+
+    <color name="yellow1">#F8A830</color>
+
+    <color name="blue1">#02ACEC</color>
+    <color name="blue1_30">#4D02ACEC</color>
+    <color name="blue1_10">#1A02ACEC</color>
+    <color name="blue2">#6BD3FF</color>
+    <color name="blue2_20">#336BD3FF</color>
+    <color name="blue2_10">#1A6BD3FF</color>
+
+    <color name="badgeColor">@color/lightPink</color>
+    <color name="colorTooltipBackground">@color/lightViolet_80</color>
+
+
+    <!--    Redesign -->
+    <color name="windowBackground_dialog">#1D1D45</color>
+    <color name="windowBackground">#050527</color>
+    <color name="windowBackground70">#70050527</color>
+    <color name="dark">#1D1D45</color>
+    <color name="darkViolet">#543F8E</color>
+    <color name="blue">#1987C5</color>
+    <color name="violet">#7273D2</color>
+    <color name="lightViolet">#C6CBFE</color>
+    <color name="lightViolet50">#80C6CBFE</color>
+    <color name="violetAlt">#3A3B62</color>
+    <color name="lightViolet_80">#CCC6CBFE</color>
+    <color name="lightPink">#DE5B82</color>
+    <color name="pink">#81384E</color>
+    <color name="red">#D44A4A</color>
+    <color name="aqua">#72E1DB</color>
+    <color name="green">#00B487</color>
+    <color name="yellow">#E0A962</color>
+
+    <color name="lightYellow">#FFF3A2</color>
+
+    <color name="violetAlt_80">#CC3A3B62</color>
+    <color name="dark_50">#801D1D45</color>
+    <color name="dark_80">#CC1D1D45</color>
+    <color name="violet_50">#807273D2</color>
+    <color name="violet_20">#337273D2</color>
+    <color name="aqua_15">#2672E1DB</color>
+    <color name="lightViolet_08">#14C6CBFE</color>
+    <color name="lightViolet_15">#26C6CBFE</color>
+    <color name="lightViolet_20">#33C6CBFE</color>
+    <color name="lightViolet_30">#4DC6CBFE</color>
+    <color name="lightViolet_30_solid">#7274A2</color>
+    <color name="lightViolet_50">#80C6CBFE</color>
+    <color name="red_20">#33D44A4A</color>
+    <color name="yellow_20">#33E49700</color>
+    <color name="outlineColor">#A28289</color>
+
+    <color name="emotion_hope">#00B487</color>
+    <color name="emotion_anger">#DE5B82</color>
+    <color name="emotion_loneliness">#C6CBFE</color>
+    <color name="emotion_nervousness">#E49700</color>
+    <color name="emotion_anxiety">#FFF3A2</color>
+
+</resources>

@@ -1,0 +1,70 @@
+{
+  "chatHistoryItems": [
+    {
+      "stepId": 44668,
+      "sender": "bot",
+      "messageType": "text",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "Hola papurri",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": null,
+      "answerData": null
+    },
+    {
+      "stepId": 44669,
+      "sender": "user",
+      "messageType": "text",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "Qué haces?",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": null,
+      "answerData": null
+    },
+    {
+      "stepId": 44670,
+      "sender": "bot",
+      "messageType": "text",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "Acá ando...",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": null,
+      "answerData": null
+    },
+    {
+      "stepId": 44671,
+      "sender": "bot",
+      "messageType": "text",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "..mirate esto...",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": null,
+      "answerData": null
+    },
+    {
+      "stepId": 44672,
+      "sender": "bot",
+      "messageType": "image",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "Descripción",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": "https://res.cloudinary.com/dmt6cqcbv/image/upload/v1608660109/chatowl/background_tool.png",
+      "answerData": null
+    },
+    {
+      "stepId": 44671,
+      "sender": "user",
+      "messageType": "text",
+      "timestamp": "2021-01-22 00:25:11-03",
+      "text": "Muy lindo",
+      "subText": null,
+      "toolboxItem": null,
+      "mediaUrl": null,
+      "answerData": null
+    }
+  ]
+}

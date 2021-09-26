@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_chat_image_sent_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/elevation_large">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row_chat_image_sent_card_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_24dp"
+        android:layout_marginVertical="@dimen/margin_4dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/padding_12dp"
+        android:textColor="@color/black1"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        app:cardElevation="@dimen/elevation_none"
+        app:layout_constraintBottom_toTopOf="@+id/row_chat_image_text_view_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintHeight_max="300dp">
+
+        <ImageView
+            android:id="@+id/row_chat_image_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/background_image_exercise" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/row_chat_image_text_view_time"
+        style="@style/ChatOwlChatTimeTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/row_chat_image_sent_card_view"
+        tools:text="8:24 am" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

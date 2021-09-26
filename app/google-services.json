@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "84155309149",
+    "firebase_url": "https://chatowl-790c0.firebaseio.com",
+    "project_id": "chatowl-790c0",
+    "storage_bucket": "chatowl-790c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84155309149:android:c4663552cece2d19d701b4",
+        "android_client_info": {
+          "package_name": "com.chatowl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84155309149-vq6ljpt97rck289ikbs8ta5jhc6mt1td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKyftOveBFk3uOSXnAhScTdfM7BTrc2X0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84155309149-d8beprkq7btd9q5luq6fdo6p66kk1kkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84155309149:android:d3b8edec2a525063d701b4",
+        "android_client_info": {
+          "package_name": "com.chatowl.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84155309149-vq6ljpt97rck289ikbs8ta5jhc6mt1td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKyftOveBFk3uOSXnAhScTdfM7BTrc2X0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84155309149-d8beprkq7btd9q5luq6fdo6p66kk1kkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

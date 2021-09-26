@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/dark"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layoutSubmit"
+                layout="@layout/layout_rate_submit"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/layoutSend"
+                layout="@layout/layout_rate_send"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/layoutThanks"
+                layout="@layout/layout_rate_thanks"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/layoutNoProblem"
+                layout="@layout/layout_rate_no_problem"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

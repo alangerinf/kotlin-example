@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_selector_settings_item"
+    android:paddingHorizontal="@dimen/padding_32dp">
+
+    <ImageView
+        android:id="@+id/layout_settings_item_image_view_icon_start"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white_80"
+        tools:src="@drawable/ic_avatar" />
+
+    <TextView
+        android:id="@+id/layout_settings_item_text_view_name"
+        style="@style/ChatOwlTextViewStyle.Smallish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_20dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:textColor="@color/selector_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layout_settings_item_image_view_icon_end"
+        app:layout_constraintStart_toEndOf="@+id/layout_settings_item_image_view_icon_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/my_account" />
+
+    <ImageView
+        android:id="@+id/layout_settings_item_image_view_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_disclosure"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:src="@drawable/ic_arrow_right_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorPrimaryLight" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

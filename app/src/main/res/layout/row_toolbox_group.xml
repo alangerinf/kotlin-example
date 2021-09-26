@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragment_toolbox_group_text_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/my_therapy_plan"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_toolbox_group_recycler_view_favorites" />
+
+    <TextView
+        android:id="@+id/fragment_toolbox_group_text_view_subtitle"
+        style="@style/ChatOwlTextViewStyle.Smallish.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
+        tools:text="Your current therapy plan" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_toolbox_group_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never"
+        android:isScrollContainer="true"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_18dp"
+        android:paddingVertical="@dimen/margin_4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_toolbox_group_text_view_therapy_title"
+        tools:listitem="@layout/row_activity_small" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate
+        android:duration="@integer/navigation_transition_duration"
+        android:fromXDelta="@fraction/navigation_transition_x_delta"
+        android:toXDelta="0" />
+
+    <alpha
+        android:duration="@integer/navigation_transition_duration"
+        android:fromAlpha="@fraction/navigation_transition_alpha"
+        android:toAlpha="1.0" />
+
+</set>

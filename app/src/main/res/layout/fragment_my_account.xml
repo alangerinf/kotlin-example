@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.chatowl.presentation.common.widgets.MyToolbar
+        android:id="@+id/fragment_my_account_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:isBackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:light="true"
+        app:showDivider="false"
+        app:toolbarTitle="@string/my_account" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_my_account_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.chatowl.presentation.common.widgets.MyAccountItem
+                android:id="@+id/fragment_my_account_item_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:name="@string/email"
+                app:editable="false"
+                tools:value="email@email.com" />
+
+            <com.chatowl.presentation.common.widgets.MyAccountItem
+                android:id="@+id/fragment_my_account_item_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2dp"
+                app:name="@string/nickname"
+                tools:value="Johnny" />
+
+            <com.chatowl.presentation.common.widgets.MyAccountItem
+                android:id="@+id/fragment_my_account_item_security_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2dp"
+                android:visibility="gone"
+                app:name="@string/security_method"
+                app:value="Code"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/fragment_my_account_text_view_download_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_60dp"
+                android:background="@drawable/background_selector_settings_item"
+                android:drawablePadding="@dimen/padding_16dp"
+                android:paddingHorizontal="@dimen/padding_32dp"
+                android:paddingVertical="@dimen/padding_24dp"
+                android:text="@string/download_data"
+                android:textColor="@color/selector_color_accent"
+                app:drawableStartCompat="@drawable/ic_download_settings" />
+
+            <TextView
+                android:id="@+id/fragment_my_account_text_view_delete_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@drawable/background_selector_settings_item"
+                android:drawablePadding="@dimen/padding_16dp"
+                android:paddingHorizontal="@dimen/padding_32dp"
+                android:paddingVertical="@dimen/padding_24dp"
+                android:text="@string/delete_account"
+                android:textColor="@color/selector_red"
+                app:drawableStartCompat="@drawable/ic_delete_outline" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

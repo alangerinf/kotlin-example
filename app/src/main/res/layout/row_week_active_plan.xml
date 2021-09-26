@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/row_week_active_plan_connector_top"
+        android:layout_width="@dimen/size_divider"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintEnd_toEndOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintStart_toStartOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/row_week_active_plan_view_status_indicator"
+        android:layout_width="@dimen/size_20dp"
+        android:layout_height="@dimen/size_20dp"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_28dp"
+        android:background="@drawable/background_primary_oval"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/row_week_active_plan_card_view" />
+
+    <View
+        android:id="@+id/row_week_active_plan_connector_bottom"
+        android:layout_width="@dimen/size_divider"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintStart_toStartOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintTop_toBottomOf="@id/row_week_active_plan_view_status_indicator" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/row_week_active_plan_image_view_indicator_done"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_check_current_week"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintEnd_toEndOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintStart_toStartOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintTop_toTopOf="@+id/row_week_active_plan_view_status_indicator"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/row_week_active_plan_image_view_indicator_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_week_current"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintEnd_toEndOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintStart_toStartOf="@+id/row_week_active_plan_view_status_indicator"
+        app:layout_constraintTop_toTopOf="@+id/row_week_active_plan_view_status_indicator" />
+
+    <Space
+        android:id="@+id/row_week_active_plan_space_start"
+        android:layout_width="@dimen/margin_20dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/row_week_active_plan_barrier_start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="row_week_active_plan_view_status_indicator, row_week_active_plan_space_start" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row_week_active_plan_card_view"
+        style="@style/ChatOwlCardViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_8dp"
+        android:layout_marginStart="@dimen/margin_12dp"
+        android:layout_marginEnd="@dimen/margin_32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/row_week_active_plan_barrier_start"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/row_week_active_plan_image_view"
+                android:layout_width="@dimen/size_week_plan_icon"
+                android:layout_height="@dimen/size_week_plan_icon"
+                android:layout_margin="@dimen/margin_8dp"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_activity_large_image_placeholder"
+                app:layout_constraintBottom_toTopOf="@+id/row_week_active_plan_text_view_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/row_week_active_plan_text_view_title"
+                style="@style/ChatOwlTextViewStyle.LightPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                app:layout_constraintBottom_toTopOf="@+id/row_week_active_plan_text_view_subtitle"
+                app:layout_constraintEnd_toStartOf="@+id/row_week_active_plan_image_view_disclosure"
+                app:layout_constraintStart_toEndOf="@+id/row_week_active_plan_image_view"
+                app:layout_constraintTop_toTopOf="@+id/row_week_active_plan_image_view"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Week 1" />
+
+            <TextView
+                android:id="@+id/row_week_active_plan_text_view_subtitle"
+                style="@style/ChatOwlTextViewStyle.Smallish"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_4dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="@+id/row_week_active_plan_image_view"
+                app:layout_constraintEnd_toStartOf="@+id/row_week_active_plan_image_view_disclosure"
+                app:layout_constraintStart_toEndOf="@+id/row_week_active_plan_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/row_week_active_plan_text_view_title"
+                tools:text="Reset your brain" />
+
+            <ImageView
+                android:id="@+id/row_week_active_plan_image_view_disclosure"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_12dp"
+                android:src="@drawable/ic_down"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/selector_white" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/row_week_active_plan_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="row_week_active_plan_text_view_description, row_week_active_plan_recycler_view"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/row_week_active_plan_text_view_description"
+                style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3sp"
+                app:layout_constraintBottom_toTopOf="@+id/row_week_active_plan_recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/row_week_active_plan_image_view"
+                tools:text="This weeks goal ist to activate your awareness. The following sessions and exercises will help you to relax, focus and concentrate on your activity:" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/row_week_active_plan_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_4dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/padding_6dp"
+                android:paddingVertical="@dimen/margin_4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/row_week_active_plan_text_view_description"
+                tools:listitem="@layout/row_activity_small" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

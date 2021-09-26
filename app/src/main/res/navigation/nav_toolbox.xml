@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_toolbox"
+    app:startDestination="@id/toolboxHostFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/toolboxHostFragment"
+        android:name="com.chatowl.presentation.toolbox.host.ToolboxHostFragment"
+        android:label="ToolboxHostFragment"
+        tools:layout="@layout/fragment_toolbox_host">
+
+        <action
+            android:id="@+id/action_toolboxHost_to_toolboxCategory"
+            app:destination="@id/toolboxCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_toolboxPlans"
+            app:destination="@id/toolboxPlansFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_newJournal"
+            app:destination="@id/newJournalDialogFragment" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_editJournal"
+            app:destination="@id/journalEditFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_viewMessage"
+            app:destination="@id/viewMessageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_addMessage"
+            app:destination="@id/addJournalMessageDialogFragment" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_exerciseLocked"
+            app:destination="@id/exerciseLockedDialog" />
+
+        <action
+            android:id="@+id/action_toolboxHost_to_chatHistoryFragment"
+            app:destination="@id/chatHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/toolboxCategoryFragment"
+        android:name="com.chatowl.presentation.toolbox.category.ToolboxCategoryFragment"
+        android:label="ToolboxCategoryFragment"
+        tools:layout="@layout/fragment_toolbox_category">
+
+        <argument
+            android:name="category"
+            app:argType="com.chatowl.data.entities.toolbox.categorydetail.ToolboxCategoryDetail" />
+
+        <action
+            android:id="@+id/action_toolboxCategory_to_messageDialog"
+            app:destination="@id/messageDialog" />
+
+        <action
+            android:id="@+id/action_toolboxCategory_to_exerciseLocked"
+            app:destination="@id/exerciseLockedDialog" />
+
+        <action
+            android:id="@+id/action_toolboxCategory_to_chatHistoryFragment"
+            app:destination="@id/chatHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/toolboxPlansFragment"
+        android:name="com.chatowl.presentation.toolbox.plans.ToolboxPlansFragment"
+        android:label="ToolboxPlans"
+        tools:layout="@layout/fragment_toolbox_plans" >
+
+        <action
+            android:id="@+id/action_toolboxPlans_to_messageDialog"
+            app:destination="@id/messageDialog" />
+
+        <action
+            android:id="@+id/action_toolboxPlans_to_exerciseLocked"
+            app:destination="@id/exerciseLockedDialog" />
+
+        <action
+            android:id="@+id/action_toolboxPlans_to_chatHistoryFragment"
+            app:destination="@id/chatHistoryFragment" />
+
+        <action
+            android:id="@+id/action_toolboxPlans_to_toolboxCategory"
+            app:destination="@id/toolboxCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/rateDialogFragment"
+        android:name="com.chatowl.presentation.toolbox.mediaexercise.RateDialogFragment"
+        android:label="RateDialogFragment"
+        tools:layout="@layout/dialog_rate">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+    </dialog>
+
+    <fragment
+        android:id="@+id/mediaExercise"
+        android:name="com.chatowl.presentation.toolbox.mediaexercise.MediaExerciseFragment"
+        android:label="MediaExerciseFragment"
+        tools:layout="@layout/fragment_media_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+        <action
+            android:id="@+id/action_mediaExercise_to_rateDialogFragment"
+            app:destination="@id/rateDialogFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quoteExercise"
+        android:name="com.chatowl.presentation.toolbox.quote.QuoteExerciseFragment"
+        android:label="QuoteExerciseFragment"
+        tools:layout="@layout/fragment_quote_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageExercise"
+        android:name="com.chatowl.presentation.toolbox.image.ImageExerciseFragment"
+        android:label="ImageExerciseFragment"
+        tools:layout="@layout/fragment_image_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/journalEditFragment"
+        android:name="com.chatowl.presentation.journal.edit.EditJournalFragment"
+        android:label="JournalEditFragment"
+        tools:layout="@layout/fragment_journal_edit">
+
+        <argument
+            android:name="journal"
+            app:argType="com.chatowl.data.entities.journal.Journal" />
+
+        <action
+            android:id="@+id/action_journalEdit_to_imageFullscreen"
+            app:destination="@id/fullscreenImageFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/newJournalDialogFragment"
+        android:name="com.chatowl.presentation.journal.newone.NewJournalDialogFragment"
+        android:label="NewJournalDialogFragment"
+        tools:layout="@layout/dialog_new_journal"/>
+
+    <fragment
+        android:id="@+id/fullscreenImageFragment"
+        android:name="com.chatowl.presentation.journal.edit.image.FullscreenImageFragment"
+        android:label="FullscreenImageFragment"
+        tools:layout="@layout/fragment_fullscreen_image">
+
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewMessageFragment"
+        android:name="com.chatowl.presentation.messages.viewmessage.ViewMessageFragment"
+        android:label="ViewMessageFragment"
+        tools:layout="@layout/fragment_message_view" >
+
+        <argument
+            android:name="messageId"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_viewMessage_to_imageFullscreen"
+            app:destination="@id/fullscreenImageFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatHistoryFragment"
+        android:name="com.chatowl.presentation.chathistory.ChatHistoryFragment"
+        android:label="ChatHistoryFragment"
+        tools:layout="@layout/fragment_chat_history">
+
+        <argument
+            android:name="chatSessionId"
+            app:argType="integer" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/addJournalMessageDialogFragment"
+        android:name="com.chatowl.presentation.messages.newone.AddJournalMessageDialogFragment"
+        android:label="NewMessageDialogFragment"
+        tools:layout="@layout/dialog_new_message" />
+
+    <dialog
+        android:id="@+id/exerciseLockedDialog"
+        android:name="com.chatowl.presentation.toolbox.exerciselocked.ExerciseLockedDialogFragment"
+        android:label="ExerciseLockedDialog"
+        tools:layout="@layout/dialog_exercise_locked">
+
+        <argument
+            android:name="message"
+            app:argType="com.chatowl.data.entities.toolbox.ExerciseLockedMessage" />
+
+    </dialog>
+
+
+    <dialog
+        android:id="@+id/noInternetDialog"
+        android:name="com.chatowl.presentation.nointernet.NoInternetDialogFragment"
+        android:label="NoInternetDialog"
+        tools:layout="@layout/dialog_no_internet" />
+
+    <action
+        android:id="@+id/action_global_currentPlanFragment"
+        app:destination="@id/currentPlanFragment" />
+    <action
+        android:id="@+id/action_global_quoteExercise"
+        app:destination="@id/quoteExercise" />
+    <action
+        android:id="@+id/action_global_noInternetDialog"
+        app:destination="@id/noInternetDialog" />
+    <action
+        android:id="@+id/action_global_imageExercise"
+        app:destination="@id/imageExercise" />
+    <action
+        android:id="@+id/action_global_mediaExercise"
+        app:destination="@id/mediaExercise" />
+
+</navigation>

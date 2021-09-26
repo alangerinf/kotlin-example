@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/fragment_journal_home_linear_progress_indicator"
+        style="@style/ChatOwlLinearProgressIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fragment_journal_text_view_no_entries"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_56dp"
+        android:layout_marginEnd="@dimen/margin_56dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_journal_home_fab_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_30dp"
+            android:src="@drawable/ic_owl_read" />
+
+        <TextView
+            style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/averta_semibold"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="Start with your journal"
+            android:textColor="@color/lightViolet"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/ChatOwlTextViewStyle.Small.LightPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="3sp"
+            android:text="Keeping a journal with regular entries will help you to track your thoughts and help you with reflecting on your progress. Start now by writing your first entry."
+            android:textColor="@color/lightViolet"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_journal_home_layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:background="@color/windowBackground"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/fragment_journal_home_layout_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:background="@drawable/background_dark_rounded_extra_large"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/fragment_journal_home_image_view_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/lightViolet" />
+
+            <EditText
+                android:id="@+id/fragment_journal_home_edit_text_search_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_8dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/padding_16dp"
+                android:textColorHint="@color/lightViolet_50"
+                android:textColor="@color/lightViolet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fragment_journal_home_image_view_search"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <com.chatowl.presentation.common.widgets.TopFadeEdgeRecyclerView
+            android:id="@+id/fragment_journal_home_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/fade_edge_length_extra_large"
+            android:nestedScrollingEnabled="false"
+            android:requiresFadingEdge="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_journal_home_layout_search"
+            tools:listitem="@layout/row_journal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/fragment_journal_home_view_pulse_large"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintEnd_toEndOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintStart_toStartOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintTop_toTopOf="@id/fragment_journal_home_fab_add"
+        tools:layout_height="100dp"
+        tools:layout_width="100dp" />
+
+    <View
+        android:id="@+id/fragment_journal_home_view_pulse_small"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_oval_primary_20"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintEnd_toEndOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintStart_toStartOf="@id/fragment_journal_home_fab_add"
+        app:layout_constraintTop_toTopOf="@id/fragment_journal_home_fab_add"
+        tools:layout_height="80dp"
+        tools:layout_width="80dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fragment_journal_home_fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:backgroundTint="@color/violet"
+        android:contentDescription="@string/new_entry"
+        android:src="@drawable/ic_plus_add_entry"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

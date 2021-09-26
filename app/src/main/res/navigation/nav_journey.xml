@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_journey"
+    app:startDestination="@id/journeyFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/journeyFragment"
+        android:name="com.chatowl.presentation.journey.JourneyFragment"
+        android:label="JourneyFragment"
+        tools:layout="@layout/fragment_journey" >
+    </fragment>
+
+</navigation>

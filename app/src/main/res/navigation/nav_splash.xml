@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_splash"
+    app:startDestination="@id/indexFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.chatowl.presentation.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splash_to_onboarding"
+            app:destination="@id/onboardingFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_main_graph"
+            app:destination="@id/nav_main"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/indexFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_signUp"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_loginConfirmationCode"
+            app:destination="@id/loginConfirmationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_secureCodeAuthenticationFragment"
+            app:destination="@id/secureCodeAuthenticationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.chatowl.presentation.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <argument
+            android:name="email"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:nullable="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_login_to_loginConfirmation"
+            app:destination="@id/loginConfirmationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/codeResentDialogFragment"
+        android:name="com.chatowl.presentation.common.CodeResentDialogFragment"
+        android:label="CodeResentDialogFragment"
+        tools:layout="@layout/dialog_code_resent">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+        <argument
+            android:name="autoClose"
+            app:argType="boolean" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/loginConfirmationFragment"
+        android:name="com.chatowl.presentation.login.loginconfirmation.LoginConfirmationFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login_confirmation">
+
+        <action
+            android:id="@+id/action_loginConfirmation_to_secureModePickerFragment"
+            app:destination="@id/secureModePickerFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+        <action
+            android:id="@+id/action_loginConfirmationFragment_to_codeResentDialogFragment"
+            app:destination="@id/codeResentDialogFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.chatowl.presentation.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_signUp_to_verificationCode"
+            app:destination="@id/signupConfirmationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+        <action
+            android:id="@+id/action_signUp_to_termsAndConditions"
+            app:destination="@id/termsAndConditions"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_signUp_to_privacyPolicy"
+            app:destination="@id/privacyPolicy"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsAndConditions"
+        android:name="com.chatowl.presentation.settings.aboutus.termsandconditions.TermsAndConditionsFragment"
+        android:label="TermsAndConditionsFragment"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+
+    <fragment
+        android:id="@+id/privacyPolicy"
+        android:name="com.chatowl.presentation.settings.aboutus.privacypolicy.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/signupConfirmationFragment"
+        android:name="com.chatowl.presentation.signup.signupconfirmation.SignUpConfirmationFragment"
+        android:label="ConfirmationFragment"
+        tools:layout="@layout/fragment_sign_up_confirmation">
+
+        <action
+            android:id="@+id/action_signupConfirmation_to_secureModePickerFragment"
+            app:destination="@+id/secureModePickerFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+        <action
+            android:id="@+id/action_signupConfirmationFragment_to_codeResentDialogFragment"
+            app:destination="@id/codeResentDialogFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/contactUsDialog"
+        android:name="com.chatowl.presentation.settings.contactus.ContactUsDialogFragment"
+        android:label="ContactUsDialog"
+        tools:layout="@layout/dialog_contact_us">
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.chatowl.presentation.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+
+        <action
+            android:id="@+id/action_onboarding_to_disclaimer"
+            app:destination="@id/disclaimerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <include app:graph="@navigation/nested_nav_main" />
+
+    <fragment
+        android:id="@+id/disclaimerFragment"
+        android:name="com.chatowl.presentation.disclaimer.DisclaimerFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_disclaimer">
+
+        <argument
+            android:name="toLogin"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_disclaimer_to_sign_up"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_disclaimer_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_disclaimer_to_crisisSupport"
+            app:destination="@id/fullScreenCrisisSupport"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullScreenCrisisSupport"
+        android:name="com.chatowl.presentation.settings.crisissupport.CrisisSupportFragment"
+        android:label="CrisisSupportFragment"
+        tools:layout="@layout/fragment_crisis_support" />
+    <action
+        android:id="@+id/action_global_contactUsDialog"
+        app:destination="@id/contactUsDialog"
+        app:popUpTo="@id/contactUsDialog"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/indexFragment"
+        android:name="com.chatowl.presentation.splash.IndexFragment"
+        android:label="IndexFragment"
+        tools:layout="@layout/fragment_index">
+        <action
+            android:id="@+id/action_indexFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secureModePickerFragment"
+        android:name="com.chatowl.presentation.secure.SecureModePickerFragment"
+        android:label="SecureModePickerFragment"
+        tools:layout="@layout/fragment_secure_mode_picker">
+        <action
+            android:id="@+id/action_secureModePickerFragment_to_secureCreatePinFragment"
+            app:destination="@id/secureCreatePinFragment" />
+        <action
+            android:id="@+id/action_secureModePickerFragment_to_nav_main"
+            app:destination="@id/nav_main"
+            app:popUpTo="@+id/indexFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secureCodeAuthenticationFragment"
+        android:name="com.chatowl.presentation.secure.SecureCodeAuthenticationFragment"
+        android:label="SecureCodeAuthenticationFragment"
+        tools:layout="@layout/fragment_secure_code_authentication">
+        <action
+            android:id="@+id/action_secureCodeAuthenticationFragment_to_nav_main"
+            app:destination="@id/nav_main"
+            app:popUpTo="@+id/indexFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_secureCodeAuthenticationFragment_to_logoutDialog"
+            app:destination="@id/logoutDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/secureCreatePinFragment"
+        android:name="com.chatowl.presentation.secure.SecureCreatePinFragment"
+        android:label="SecureCreatePinFragment"
+        tools:layout="@layout/fragment_secure_create_pin">
+        <action
+            android:id="@+id/action_secureCreatePinFragment_to_nav_main"
+            app:destination="@id/nav_main"
+            app:popUpTo="@+id/indexFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/logoutDialog"
+        android:name="com.chatowl.presentation.settings.logout.LogoutDialogFragment"
+        android:label="LogoutDialog"
+        tools:layout="@layout/dialog_logout">
+    </dialog>
+
+    <action
+        android:id="@+id/action_global_indexFragments"
+        app:destination="@id/indexFragment"
+        app:popUpTo="@id/nav_main"
+        app:popUpToInclusive="true"/>
+</navigation>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_plan"
+    app:startDestination="@id/currentPlanFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/currentPlanFragment"
+        android:name="com.chatowl.presentation.plan.CurrentPlanFragment"
+        android:label="CurrentPlanFragment"
+        tools:layout="@layout/fragment_current_plan" >
+
+        <action
+            android:id="@+id/action_currentPlan_to_planDescription"
+            app:destination="@id/planDescriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_currentPlan_to_planDetail"
+            app:destination="@id/planDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_currentPlan_to_planList"
+            app:destination="@id/planListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_plan_to_mediaExercise"
+            app:destination="@id/mediaExercise"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_plan_to_quoteExercise"
+            app:destination="@id/quoteExercise"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_plan_to_imageExercise"
+            app:destination="@id/imageExercise"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_plan_to_exerciseLockedDialog"
+            app:destination="@id/exerciseLockedDialog" />
+
+        <action
+            android:id="@+id/action_plan_to_noInternetDialog"
+            app:destination="@id/noInternetDialog" />
+
+        <action
+            android:id="@+id/action_plan_to_versionChangeDialog"
+            app:destination="@id/versionChangeConfirmation" />
+
+        <action
+            android:id="@+id/action_plan_to_chatHistoryFragment"
+            app:destination="@id/chatHistoryFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatHistoryFragment"
+        android:name="com.chatowl.presentation.chathistory.ChatHistoryFragment"
+        android:label="ChatHistoryFragment"
+        tools:layout="@layout/fragment_chat_history">
+
+        <argument
+            android:name="chatSessionId"
+            app:argType="integer" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/planDescriptionFragment"
+        android:name="com.chatowl.presentation.plan.description.PlanDescriptionFragment"
+        android:label="PlanDescriptionFragment"
+        tools:layout="@layout/fragment_plan_description" >
+
+        <argument
+            android:name="programDescription"
+            app:argType="com.chatowl.data.entities.plan.FullProgramDescription" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/planDetailFragment"
+        android:name="com.chatowl.presentation.plan.detail.PlanDetailFragment"
+        android:label="PlanDetailFragment"
+        tools:layout="@layout/fragment_plan_detail" >
+
+        <argument
+            android:name="programDetail"
+            app:argType="com.chatowl.data.entities.plan.ProgramDetail" />
+
+        <argument
+            android:name="assessmentDone"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_planDetail_to_planDescription"
+            app:destination="@id/planDescriptionFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+        <action
+            android:id="@+id/action_planDetail_to_planChangeDialog"
+            app:destination="@id/programChangeConfirmation" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/planListFragment"
+        android:name="com.chatowl.presentation.plan.planlist.PlanListFragment"
+        android:label="PlanListFragment"
+        tools:layout="@layout/fragment_plan_list" >
+
+        <argument
+            android:name="planList"
+            app:argType="com.chatowl.data.entities.plan.ProgramPreview[]" />
+
+        <action
+            android:id="@+id/action_planList_to_planDetail"
+            app:destination="@id/planDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mediaExercise"
+        android:name="com.chatowl.presentation.toolbox.mediaexercise.MediaExerciseFragment"
+        android:label="MediaExerciseFragment"
+        tools:layout="@layout/fragment_media_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quoteExercise"
+        android:name="com.chatowl.presentation.toolbox.quote.QuoteExerciseFragment"
+        android:label="QuoteExerciseFragment"
+        tools:layout="@layout/fragment_quote_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageExercise"
+        android:name="com.chatowl.presentation.toolbox.image.ImageExerciseFragment"
+        android:label="ImageExerciseFragment"
+        tools:layout="@layout/fragment_image_exercise">
+
+        <argument
+            android:name="header"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="exercise"
+            app:argType="com.chatowl.data.entities.toolbox.ToolboxExercise" />
+
+        <argument
+            android:name="isChatSource"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/exerciseLockedDialog"
+        android:name="com.chatowl.presentation.toolbox.exerciselocked.ExerciseLockedDialogFragment"
+        android:label="ExerciseLockedDialog"
+        tools:layout="@layout/dialog_exercise_locked">
+
+        <argument
+            android:name="message"
+            app:argType="com.chatowl.data.entities.toolbox.ExerciseLockedMessage" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/noInternetDialog"
+        android:name="com.chatowl.presentation.nointernet.NoInternetDialogFragment"
+        android:label="NoInternetDialog"
+        tools:layout="@layout/dialog_no_internet" />
+
+    <dialog
+        android:id="@+id/programChangeConfirmation"
+        android:name="com.chatowl.presentation.plan.detail.ProgramChangeDialogFragment"
+        android:label="ProgramChangeDialog"
+        tools:layout="@layout/dialog_plan_change" >
+
+        <argument
+            android:name="planVersion"
+            app:argType="string" />
+
+        <argument
+            android:name="newPlanId"
+            app:argType="integer" />
+
+        <argument
+            android:name="planPreview"
+            app:argType="com.chatowl.data.entities.plan.ProgramPreview" />
+
+        <action
+            android:id="@+id/action_programChange_to_messageDialogV2"
+            app:destination="@id/messageDialogV2" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/versionChangeConfirmation"
+        android:name="com.chatowl.presentation.plan.PlanVersionChangeDialogFragment"
+        android:label="PlanVersionChangeDialog"
+        tools:layout="@layout/dialog_plan_version_change" >
+
+        <argument
+            android:name="programId"
+            app:argType="integer" />
+
+        <argument
+            android:name="planVersion"
+            app:argType="string" />
+
+        <argument
+            android:name="planList"
+            app:argType="com.chatowl.data.entities.plan.ProgramPreview[]" />
+
+        <action
+            android:id="@+id/action_versionChangeDialog_to_planList"
+            app:destination="@id/planListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_versionChangeDialog_to_currentPlanFragment"
+            app:destination="@id/currentPlanFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/currentPlanFragment"
+            app:popUpToInclusive="true"
+            />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/messageDialog"
+        android:name="com.chatowl.presentation.message.MessageDialogFragment"
+        android:label="MessageDialogFragment"
+        tools:layout="@layout/dialog_message">
+
+        <argument
+            android:name="message"
+            app:argType="integer"/>
+
+        <argument
+            android:name="showIcon"
+            android:defaultValue="true"
+            app:argType="boolean" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/messageDialogV2"
+        android:name="com.chatowl.presentation.message.v2.MessageDialogFragmentV2"
+        android:label="MessageDialogFragmentV2"
+        tools:layout="@layout/dialog_message_v2">
+
+        <argument
+            android:name="title"
+            app:argType="string"/>
+
+        <argument
+            android:name="message"
+            app:argType="string"/>
+
+        <argument
+            android:name="showIcon"
+            android:defaultValue="true"
+            app:argType="boolean" />
+
+        <argument
+            android:name="iconResourceId"
+            app:argType="reference"
+            android:defaultValue="@drawable/ic_check_activity_completed"/>
+
+        <action
+            android:id="@+id/action_messageDialogV2_to_currentPlanFragment"
+            app:destination="@id/currentPlanFragment"
+            app:popUpTo="@+id/currentPlanFragment"
+            app:popUpToInclusive="true"/>
+
+    </dialog>
+    <action
+        android:id="@+id/action_global_currentPlanFragment"
+        app:destination="@id/currentPlanFragment" />
+
+</navigation>

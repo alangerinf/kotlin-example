@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/dark"
+    app:cardCornerRadius="@dimen/corner_radius_large"
+    app:cardElevation="@dimen/elevation_medium">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_16dp">
+
+        <TextView
+            android:id="@+id/layout_chat_answer_slider_ungraduated_text_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/padding_24dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/averta_regular"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_slider_ungraduated_text_view_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Why do you feel this way?" />
+
+        <TextView
+            android:id="@+id/layout_chat_answer_slider_ungraduated_text_view_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/please_adjust_slider"
+            android:textColor="@color/lightViolet"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_slider_ungraduated_seekbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/layout_chat_answer_slider_ungraduated_text_view_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/averta_regular"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_slider_ungraduated_button_done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Pretty hard" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/layout_chat_answer_slider_ungraduated_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_52dp"
+            android:layout_marginBottom="8dp"
+            android:stepSize="1.0"
+            android:valueFrom="0.0"
+            android:valueTo="10.0"
+            app:labelBehavior="gone"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chat_answer_slider_ungraduated_text_view_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:thumbColor="@color/white"
+            app:thumbElevation="@dimen/elevation_medium"
+            app:thumbRadius="@dimen/size_thumb_slider"
+            app:tickVisible="false"
+            app:trackColorActive="@color/violet"
+            app:trackColorInactive="@color/lightViolet_15"
+            app:trackHeight="@dimen/size_track_height"
+            tools:value="5.0" />
+
+        <Button
+            android:id="@+id/layout_chat_answer_slider_ungraduated_button_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_28dp"
+            android:enabled="false"
+            android:text="@string/done"
+            android:fontFamily="@font/averta_semibold"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:enabled="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

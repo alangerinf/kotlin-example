@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row_toolbox_tool_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_8dp"
+        android:layout_marginVertical="@dimen/margin_4dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/corner_radius_medium"
+        app:cardElevation="@dimen/elevation_none"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/row_toolbox_tool_image_view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_tool" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/row_toolbox_tool_text_view_quote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_24dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:maxLines="4"
+                android:textColor="@color/gray1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                tools:text="“Be yourself – everyone else is already taken.”" />
+
+            <ImageView
+                android:id="@+id/row_toolbox_tool_image_view_favorite"
+                android:layout_width="@dimen/size_12dp"
+                android:layout_height="@dimen/size_12dp"
+                android:layout_margin="@dimen/margin_8dp"
+                android:contentDescription="@string/favorite"
+                android:src="@drawable/ic_favorite_filled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/row_activity_large_text_view_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8dp"
+                android:drawablePadding="@dimen/padding_4dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12sp"
+                app:drawableStartCompat="@drawable/ic_clock"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="15 min" />
+
+            <TextView
+                android:id="@+id/row_toolbox_tool_text_view_suggested_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8dp"
+                android:background="@drawable/background_green3_rounded_small"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_8dp"
+                android:text="@string/suggested"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/row_toolbox_tool_view_locked_overlay"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/black1_60"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/row_toolbox_tool_image_view_type_icon"
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:layout_margin="@dimen/margin_8dp"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@drawable/ic_image_circle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/row_toolbox_tool_text_view_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="@dimen/text_size_12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/row_toolbox_tool_card_view"
+        app:layout_constraintStart_toStartOf="@+id/row_toolbox_tool_card_view"
+        app:layout_constraintTop_toBottomOf="@+id/row_toolbox_tool_card_view"
+        tools:text="This image here" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

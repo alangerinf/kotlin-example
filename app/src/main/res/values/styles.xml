@@ -1,0 +1,408 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="ChatOwlAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:navigationBarColor">@color/black1</item>
+        <item name="android:statusBarColor">@color/transparent_white</item>
+        <item name="materialButtonStyle">@style/MaterialButtonStyle</item>
+        <!--        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>-->
+        <!--        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>-->
+        <item name="android:textViewStyle">@style/ChatOwlTextViewStyle</item>
+        <item name="bottomSheetDialogTheme">@style/ChatOwlBottomSheetDialogTheme</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/ChatOwlModalStyle</item>
+    </style>
+
+    <!-- TEXT -->
+    <style name="ChatOwlTextViewStyle" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/averta_regular</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.LightPrimary" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/lightViolet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Primary" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.DarkPrimary" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Secondary" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Small" parent="ChatOwlTextViewStyle">
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Small.LightPrimary" parent="ChatOwlTextViewStyle.Small">
+        <item name="android:textColor">@color/lightViolet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Small.Primary" parent="ChatOwlTextViewStyle.Small">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Small.DarkPrimary" parent="ChatOwlTextViewStyle.Small">
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Small.Secondary" parent="ChatOwlTextViewStyle.Small">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Smallish" parent="ChatOwlTextViewStyle">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Smallish.LightPrimary" parent="ChatOwlTextViewStyle.Smallish">
+        <item name="android:textColor">@color/lightViolet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Smallish.Primary" parent="ChatOwlTextViewStyle.Smallish">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Smallish.DarkPrimary" parent="ChatOwlTextViewStyle.Smallish">
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="ChatOwlTextViewStyle.Smallish.Secondary" parent="ChatOwlTextViewStyle.Smallish">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ChatOwlBottomSheetTitleTextViewStyle" parent="@style/ChatOwlTextViewStyle">
+        <item name="android:textSize">@dimen/text_size_24sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/averta_semibold</item>
+        <!--        <item name="android:textStyle">bold</item>-->
+        <item name="android:layout_marginStart">@dimen/bottom_sheet_dialog_title_horizontal_margin
+        </item>
+        <item name="android:layout_marginEnd">@dimen/bottom_sheet_dialog_title_horizontal_margin
+        </item>
+        <item name="android:layout_marginTop">@dimen/margin_48dp</item>
+    </style>
+
+    <style name="ChatOwlBottomSheetBodyTextViewStyle" parent="@style/ChatOwlTextViewStyle">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/averta_regular</item>
+        <item name="android:layout_marginStart">@dimen/bottom_sheet_dialog_title_horizontal_margin
+        </item>
+        <item name="android:layout_marginEnd">@dimen/bottom_sheet_dialog_title_horizontal_margin
+        </item>
+        <item name="android:textColor">@color/lightViolet</item>
+        <item name="android:layout_marginTop">@dimen/margin_48dp</item>
+    </style>
+
+    <style name="ChatOwlMenuTextVieWStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/black1</item>
+        <item name="android:textSize">@dimen/text_size_24sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:paddingTop">@dimen/margin_8dp</item>
+        <item name="android:paddingBottom">@dimen/margin_8dp</item>
+        <item name="android:paddingStart">@dimen/margin_32dp</item>
+        <item name="android:paddingEnd">@dimen/margin_32dp</item>
+    </style>
+
+    <style name="ChatOwlTitleTextViewStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:fontFamily">@font/averta_semibold</item>
+        <item name="android:textSize">@dimen/text_size_22sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ChatOwlTitleTextViewLightStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:fontFamily">@font/averta_semibold</item>
+        <item name="android:textSize">@dimen/text_size_20sp</item>
+        <item name="android:textColor">@color/splashBackgroundColor</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ChatOwlSettingGroupNameTextViewStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/colorPrimary2</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:paddingStart">@dimen/padding_16dp</item>
+        <item name="android:paddingEnd">@dimen/padding_16dp</item>
+        <item name="android:paddingTop">@dimen/padding_12dp</item>
+        <item name="android:paddingBottom">@dimen/padding_12dp</item>
+    </style>
+
+    <style name="ChatOwlSettingItemTextViewStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/blackHighEmphasis</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/background_view_selector</item>
+        <item name="android:paddingTop">@dimen/padding_16dp</item>
+        <item name="android:paddingBottom">@dimen/padding_12dp</item>
+        <item name="android:paddingStart">@dimen/padding_16dp</item>
+        <item name="android:paddingEnd">@dimen/padding_16dp</item>
+        <item name="drawableEndCompat">@drawable/ic_arrow_right</item>
+        <item name="drawableTint">@color/colorPrimary</item>
+    </style>
+
+    <!-- BUTTON -->
+    <style name="ChatOwlButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/size_40dp</item>
+        <item name="android:minWidth">@dimen/size_140dp</item>
+        <item name="android:textColor">@color/selector_white</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingEnd">@dimen/padding_24dp</item>
+        <item name="android:paddingStart">@dimen/padding_24dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">@font/averta_semibold</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/button_primary</item>
+    </style>
+
+    <style name="ChatOwlButtonStyle.Narrow" parent="ChatOwlButtonStyle">
+        <item name="android:minWidth">100dp</item>
+        <item name="android:paddingStart">@dimen/padding_24dp</item>
+        <item name="android:paddingEnd">@dimen/padding_24dp</item>
+    </style>
+
+    <style name="MaterialButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:paddingLeft">@dimen/padding_32dp</item>
+        <item name="android:paddingRight">@dimen/padding_32dp</item>
+        <item name="android:paddingTop">@dimen/padding_12dp</item>
+        <item name="android:paddingBottom">@dimen/padding_12dp</item>
+        <item name="shapeAppearanceOverlay">@style/MaterialButtonShapeAppearance</item>
+        <item name="android:textAppearance">@style/MaterialButtonTextAppearance</item>
+        <item name="android:minWidth">@dimen/size_150dp</item>
+    </style>
+
+    <style name="OutlineMaterialButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:paddingLeft">@dimen/padding_32dp</item>
+        <item name="android:paddingRight">@dimen/padding_32dp</item>
+        <item name="android:paddingTop">@dimen/padding_12dp</item>
+        <item name="android:paddingBottom">@dimen/padding_12dp</item>
+        <item name="shapeAppearanceOverlay">@style/MaterialButtonShapeAppearance</item>
+        <item name="android:textAppearance">@style/MaterialButtonTextAppearance</item>
+        <item name="android:minWidth">@dimen/size_150dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="MaterialButtonShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/corner_radius_extra_large</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_radius_extra_large</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_radius_extra_large</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_radius_extra_large</item>
+    </style>
+
+    <style name="MaterialButtonTextAppearance" parent="TextAppearance.MaterialComponents.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="MaterialColorAccentButtonStyle" parent="MaterialButtonStyle">
+        <item name="materialThemeOverlay">@style/ColorAccentButtonThemeOverlay</item>
+    </style>
+
+    <style name="ColorAccentButtonThemeOverlay">
+        <item name="colorPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="MaterialRedButtonStyle" parent="MaterialButtonStyle">
+        <item name="materialThemeOverlay">@style/RedButtonThemeOverlay</item>
+    </style>
+
+    <style name="RedButtonThemeOverlay">
+        <item name="colorPrimary">@color/red</item>
+    </style>
+
+    <!-- EDIT TEXT -->
+    <style name="ChatOwlEditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:gravity">top|start</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColorHint">@color/hintTextColor</item>
+        <item name="android:textColor">@color/selector_edit_text_color</item>
+    </style>
+
+    <style name="ChatOwlEditTextStyle.SingleLine" parent="ChatOwlEditTextStyle">
+        <item name="android:inputType">text</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ChatOwlMyEditTextStyle" parent="@style/ChatOwlEditTextStyle">
+        <item name="android:paddingTop">@dimen/padding_12dp</item>
+        <item name="android:paddingBottom">@dimen/padding_12dp</item>
+        <item name="android:paddingStart">@dimen/padding_16dp</item>
+        <item name="android:paddingEnd">@dimen/padding_16dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">@dimen/edit_text_height</item>
+    </style>
+
+    <style name="ChatOwlEditTextContainer">
+        <item name="android:padding">@dimen/padding_8dp</item>
+    </style>
+
+    <style name="ChatOwlEditTextConfirmationCode">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:backgroundTint">@color/primaryTextColor</item>
+        <item name="android:fontFamily">@font/averta_semibold</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:paddingBottom">@dimen/margin_16dp</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="ChatOwlEditText">
+        <item name="android:padding">@dimen/padding_8dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ChatOwlEditTextError" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:paddingStart">@dimen/padding_4dp</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="lineHeight">18sp</item>
+    </style>
+
+    <!-- IMAGE BUTTON -->
+    <style name="ChatOwlImageButtonStyle" parent="@style/Widget.AppCompat.ImageButton">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="ChatOwlImageButtonStyle.Tinted" parent="@style/ChatOwlImageButtonStyle">
+        <item name="android:tint">@color/selector_view_pressed_light</item>
+    </style>
+
+    <style name="TabItemView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/tab_view_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ChatOwlDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowMinWidthMajor">100%</item>
+        <item name="windowMinWidthMinor">100%</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="ChatOwlBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ChatOwlModalStyle</item>
+    </style>
+
+    <style name="ChatOwlModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_top_rounded</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="ChatOwlBottomSheetDialogAdjustResize" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ChatOwlJournalModalStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="ChatOwlJournalModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_top_rounded_small</item>
+    </style>
+
+    <style name="ChatOwlLinearProgressIndicator" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="trackColor">@color/colorAccent_50</item>
+        <item name="indicatorColor">@color/colorAccent</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:elevation">@dimen/elevation_extra_large</item>
+    </style>
+
+    <!-- CHAT-->
+    <style name="ChatOwlChatTimeTextStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:layout_marginTop">@dimen/margin_4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white_50</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+    </style>
+
+    <style name="ChatOwlChoiceTextStyle" parent="ChatOwlTextViewStyle">
+        <item name="android:textColor">@color/aqua</item>
+        <item name="android:layout_height">@dimen/size_40dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/padding_16dp</item>
+        <item name="android:paddingEnd">@dimen/padding_16dp</item>
+        <item name="android:background">@drawable/background_selector_outline_aqua_rounded_medium
+        </item>
+    </style>
+
+    <style name="ChatOwlChoiceTextStyleSuggested" parent="ChatOwlChoiceTextStyle">
+        <item name="android:background">@drawable/background_selector_outline_aqua_rounded_medium_selected
+        </item>
+    </style>
+
+    <style name="ChatOwlSliderStyle" parent="Widget.MaterialComponents.Slider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="thumbColor">@color/white</item>
+        <item name="thumbElevation">@dimen/elevation_medium</item>
+        <item name="tickVisible">false</item>
+        <item name="trackColorActive">@color/colorAccent</item>
+        <item name="trackColorInactive">@color/gray20_50</item>
+        <item name="trackHeight">@dimen/size_track_height</item>
+        <item name="labelBehavior">gone</item>
+    </style>
+
+    <!-- CARD -->
+    <style name="ChatOwlCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/dark</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">@dimen/corner_radius_medium</item>
+    </style>
+
+    <style name="FullScreenDialog" parent="ChatOwlAppTheme">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_journal_layout_tool_tip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="@+id/fragment_journal_edit_scrollview"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/fragment_journal_edit_scrollview">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_32dp"
+        android:background="@drawable/background_rectangle_tool_tip"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="@dimen/padding_8dp"
+        android:paddingVertical="@dimen/padding_4dp"
+        android:text="@string/slide_up_to_record"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/background_triangle_tool_tip" />
+
+</LinearLayout>
